@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "engine": "Three.js r160 / WebGL",
+  "scene_factory": "scene-builder.js",
+  "stable_actor_ids": ["player", "officer", "companion"],
+  "construction": "Procedural BoxGeometry with per-mesh transforms, materials and generated canvas labels",
+  "static_export": "../exports/occupation-checkpoint.three.json",
+  "export_format": "Three.js Object3D JSON, not glTF/GLB or a full game project",
+  "license_file": "../vendor/THREE-LICENSE.txt",
+  "art_status": "TECHNICAL_PROTOTYPE_BELOW_SEASON_FOUR_TARGET",
+  "rig_and_animation": "Named actor components controlled by scene.js and director.mjs; no standard skeleton or animation clips",
+  "reuse_boundary": "Code and native-format assets are local; another engine needs conversion and renderer/animation adapters"
+}
