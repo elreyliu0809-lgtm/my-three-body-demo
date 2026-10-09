@@ -1,4 +1,4 @@
-import {TrialConnection} from './connection.js';
+import {TrialConnection} from './connection.js?v=0.3.2';
 const $=id=>document.getElementById(id),storageKey='mt-trial-v03-session';let session='',remaining=0,ready=false,pending=false,acting=false,recognition=null,recognizing=false;
 const sceneReady=window.GameView?Promise.resolve():new Promise(resolve=>document.addEventListener('scene-ready',resolve,{once:true}));
 const report=(text,error=false)=>{$('feedback').textContent=text;$('feedback').parentElement.classList.toggle('error',error);};
