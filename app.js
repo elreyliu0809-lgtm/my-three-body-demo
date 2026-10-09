@@ -1,4 +1,4 @@
-import {TrialConnection} from './connection.js?v=0.3.2';
+import {TrialConnection} from './connection.js?v=demo-v0.01';
 const $=id=>document.getElementById(id),storageKey='mt-trial-v03-session';let session='',remaining=0,ready=false,pending=false,acting=false,recognition=null,recognizing=false;
 const sceneReady=window.GameView?Promise.resolve():new Promise(resolve=>document.addEventListener('scene-ready',resolve,{once:true}));
 const report=(text,error=false)=>{$('feedback').textContent=text;$('feedback').parentElement.classList.toggle('error',error);};
@@ -31,5 +31,5 @@ window.GameUI={inspect,debug(){return {pending,acting,session,remaining,ready};}
 $('connectTrial').addEventListener('click',()=>{$('trialAccess').hidden=false;$('invite').focus();});
 $('previewScene').addEventListener('click',()=>{$('trialAccess').hidden=true;});
 $('accessForm').addEventListener('submit',async e=>{e.preventDefault();if(pending||acting)return;TrialConnection.setInvite($('invite').value);$('connectNow').disabled=true;$('accessFeedback').textContent='正在连接本次试玩……';await connect();$('connectNow').disabled=false;if(ready)$('trialAccess').hidden=true;});
-if(TrialConnection.hasInvite){$('trialAccess').hidden=true;connect();}else{updateControls();$('mode').textContent='可观察场景 · 输入口令后互动';$('accessFeedback').textContent=TrialConnection.configured?'向主办者获取本批试玩口令。':'主办者尚未开放AI服务，场景仍可查看。';}
+if(TrialConnection.hasInvite){$('trialAccess').hidden=true;connect();}else{updateControls();$('mode').textContent='可观察场景 · 输入口令后互动';$('accessFeedback').textContent=TrialConnection.closed?'实验性Demo v0.01已收尾，AI服务暂停；可先查看场景。':TrialConnection.configured?'向主办者获取本批试玩口令。':'主办者尚未开放AI服务，场景仍可查看。';}
 
