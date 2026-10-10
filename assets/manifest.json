@@ -1,13 +1,43 @@
 {
-  "schema_version": "1.0.0",
-  "engine": "Three.js r160 / WebGL",
-  "scene_factory": "scene-builder.js",
-  "stable_actor_ids": ["player", "officer", "companion"],
-  "construction": "Procedural BoxGeometry with per-mesh transforms, materials and generated canvas labels",
-  "static_export": "../exports/occupation-checkpoint.three.json",
-  "export_format": "Three.js Object3D JSON, not glTF/GLB or a full game project",
-  "license_file": "../vendor/THREE-LICENSE.txt",
-  "art_status": "TECHNICAL_PROTOTYPE_BELOW_SEASON_FOUR_TARGET",
-  "rig_and_animation": "Named actor components controlled by scene.js and director.mjs; no standard skeleton or animation clips",
-  "reuse_boundary": "Code and native-format assets are local; another engine needs conversion and renderer/animation adapters"
+  "version": "demo-v0.02",
+  "native_candidate": "R02_STATIC_PILOT_01",
+  "assets": [
+    {
+      "id": "officer",
+      "name": "officer-pilot.glb",
+      "sha256": "67ad337222b3018439aead6cb3c2720f86b798742f5080e9c473e44893967020",
+      "size_bytes": 1793788,
+      "origin": "Original project Blender static candidate with embedded textures",
+      "acceptance": "NOT_HUMAN_ACCEPTED",
+      "rigged": false
+    },
+    {
+      "id": "counter",
+      "name": "counter-pilot.glb",
+      "sha256": "bfbc370305b708ab66d1b114a80a4596968c906d7de90326a1e0faadeaa9725d",
+      "size_bytes": 377784,
+      "origin": "Original project Blender static candidate with embedded textures",
+      "acceptance": "NOT_HUMAN_ACCEPTED",
+      "rigged": false
+    },
+    {
+      "id": "application",
+      "name": "paper-pilot.glb",
+      "sha256": "f073065bf3280909f04394c1a31fe747d35129325b1cfc1cf5bdf757cc948597",
+      "size_bytes": 326248,
+      "origin": "Original project Blender static candidate with embedded textures",
+      "acceptance": "NOT_HUMAN_ACCEPTED",
+      "rigged": false
+    }
+  ],
+  "procedural_actors": [
+    "player",
+    "companion",
+    "contact",
+    "queue"
+  ],
+  "static_officer": true,
+  "art_acceptance": false,
+  "AI": "paused",
+  "source": "Original project Blender-generated geometry and embedded textures; MIT Three.js vendor"
 }

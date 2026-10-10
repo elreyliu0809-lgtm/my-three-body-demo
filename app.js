@@ -1,4 +1,4 @@
-import {TrialConnection} from './connection.js?v=demo-v0.01';
+import {TrialConnection} from './connection.js?v=demo-v0.02';
 const $=id=>document.getElementById(id),storageKey='mt-trial-v03-session';let session='',remaining=0,ready=false,pending=false,acting=false,recognition=null,recognizing=false;
 const sceneReady=window.GameView?Promise.resolve():new Promise(resolve=>document.addEventListener('scene-ready',resolve,{once:true}));
 const report=(text,error=false)=>{$('feedback').textContent=text;$('feedback').parentElement.classList.toggle('error',error);};
@@ -13,7 +13,7 @@ try{const reply=await TrialConnection.fetch('/api/health',{cache:'no-store'});co
  if(current.last){$('speaker').textContent='已保存的局面';$('line').textContent=current.last.proposal.npc;$('narration').textContent=current.last.proposal.narration;$('consequence').textContent=current.last.consequences.join(' ');$('consequence').hidden=false;window.__lastTurn=current.last;}
  ready=serviceReady;$('mode').textContent=current.resumed?'已恢复局面':'可自由说话或行动';$('runtimeDetails').textContent=`请求模型：${health.model}；Uuzu；剩余调用尝试${remaining}。角色动作由同一世界状态与演出协议执行。`;$('saveStatus').textContent='局面保存在本地服务；刷新恢复，重开会另建存档。';report(ready?'你可以说自己的话，也可以先观察现场。':'AI接口不可用，当前场景可查看。',!ready);
 }catch(err){ready=false;$('mode').textContent='AI试玩尚未连接';$('accessFeedback').textContent=err.message;report(err.message,true);}updateControls();}
-document.querySelectorAll('[data-prompt]').forEach(button=>button.addEventListener('click',()=>{$('input').value=button.dataset.prompt;$('input').focus();report('可以修改这句话；发送后按你的实际意思处理。');}));
+document.querySelectorAll('[data-prompt]').forEach(button=>button.addEventListener('click',()=>{$('input').value=button.dataset.prompt;$('input').focus();report('可以修改这句话；AI暂停期间保留输入，不发送。');}));
 $('inputForm').addEventListener('submit',async event=>{event.preventDefault();if(pending||acting||!ready||remaining<=0)return;const input=$('input').value.trim();if(!input){report('先写下你想说的话或行动。',true);return;}if(recognizing)recognition.stop();pending=true;updateControls();report('对方正在理解你的做法……');
 try{const result=await post('/api/turn',{id:session,input});window.__lastTurn=result;showState(result.state);$('mode').textContent='实时AI回应 · 人物正在配合';$('consequence').textContent=result.consequences.join(' ');$('consequence').hidden=false;$('runtimeDetails').textContent=`实际回报型号：${result.model}；${(result.elapsed_ms/1000).toFixed(1)}秒；剩余${remaining}次。回执${result.call_id}。`;window.GameView.perform(result.proposal,result.state);report(`你的意图：“${result.proposal.understanding}”`);
 }catch(err){$('mode').textContent='这一轮未完成';report(err.message+' 输入与之前的局面保留。',true);}finally{pending=false;updateControls();}});
@@ -31,5 +31,5 @@ window.GameUI={inspect,debug(){return {pending,acting,session,remaining,ready};}
 $('connectTrial').addEventListener('click',()=>{$('trialAccess').hidden=false;$('invite').focus();});
 $('previewScene').addEventListener('click',()=>{$('trialAccess').hidden=true;});
 $('accessForm').addEventListener('submit',async e=>{e.preventDefault();if(pending||acting)return;TrialConnection.setInvite($('invite').value);$('connectNow').disabled=true;$('accessFeedback').textContent='正在连接本次试玩……';await connect();$('connectNow').disabled=false;if(ready)$('trialAccess').hidden=true;});
-if(TrialConnection.hasInvite){$('trialAccess').hidden=true;connect();}else{updateControls();$('mode').textContent='可观察场景 · 输入口令后互动';$('accessFeedback').textContent=TrialConnection.closed?'实验性Demo v0.01已收尾，AI服务暂停；可先查看场景。':TrialConnection.configured?'向主办者获取本批试玩口令。':'主办者尚未开放AI服务，场景仍可查看。';}
+if(!TrialConnection.closed&&TrialConnection.hasInvite){$('trialAccess').hidden=true;connect();}else{updateControls();if(TrialConnection.closed)$('trialAccess').hidden=true;$('mode').textContent='可观察场景 · AI已暂停';$('accessFeedback').textContent=TrialConnection.closed?'实验性Demo v0.02，AI服务暂停；可查看场景和编辑输入。':TrialConnection.configured?'向主办者获取本批试玩口令。':'主办者尚未开放AI服务，场景仍可查看。';}
 

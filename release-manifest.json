@@ -1,0 +1,133 @@
+{
+  "version": "v0.02",
+  "candidate": "R02_STATIC_PILOT_01",
+  "AI": "paused",
+  "files": [
+    {
+      "name": ".nojekyll",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "name": "app.js",
+      "sha256": "e4e691d876875ef3682ff1e41d8f942d168856a5a838b946dbef8d98a9605f46",
+      "size_bytes": 10465
+    },
+    {
+      "name": "assets/manifest.json",
+      "sha256": "3dec6742991206150409080b18265de2649f50831615a341d3c3486ada87d85b",
+      "size_bytes": 1350
+    },
+    {
+      "name": "assets/r02/counter-pilot.glb",
+      "sha256": "bfbc370305b708ab66d1b114a80a4596968c906d7de90326a1e0faadeaa9725d",
+      "size_bytes": 377784
+    },
+    {
+      "name": "assets/r02/officer-pilot.glb",
+      "sha256": "67ad337222b3018439aead6cb3c2720f86b798742f5080e9c473e44893967020",
+      "size_bytes": 1793788
+    },
+    {
+      "name": "assets/r02/paper-pilot.glb",
+      "sha256": "f073065bf3280909f04394c1a31fe747d35129325b1cfc1cf5bdf757cc948597",
+      "size_bytes": 326248
+    },
+    {
+      "name": "assets/r02-integration.js",
+      "sha256": "306059eb5c32d0aa2120ba8e2ee3c83b433ba9b9e42d83236c42df0cb94455e1",
+      "size_bytes": 2162
+    },
+    {
+      "name": "assets/scene-builder.js",
+      "sha256": "1b3d24a0c8e5c798a931609245ab89931f7f52beba7158a2899c6d6a8b8c3591",
+      "size_bytes": 9442
+    },
+    {
+      "name": "audio/ambience.wav",
+      "sha256": "97722b0240d572b6665c96e535f2973bc3e0f5ebec8da9beb911b806e4073868",
+      "size_bytes": 529244
+    },
+    {
+      "name": "audio/beep.wav",
+      "sha256": "5d08c4fc8ea6c52287b12c8a8278f4f6a6d81030cf86f488fc0be6fd83b306df",
+      "size_bytes": 10628
+    },
+    {
+      "name": "audio/paper.wav",
+      "sha256": "e74731c26ee5396af0b1fcef3bbf9121fd30bcdcfba30ad59e9d77e1b0b54c37",
+      "size_bytes": 24300
+    },
+    {
+      "name": "connection.js",
+      "sha256": "748cd6ce62231131c15e9a7c57964035ed030ad74a93179bc305019eb475b866",
+      "size_bytes": 2495
+    },
+    {
+      "name": "director.mjs",
+      "sha256": "12b47b33d5f8fc7366cc1836086ddc64520424c325abba88ade030a9cd6be475",
+      "size_bytes": 3006
+    },
+    {
+      "name": "index.html",
+      "sha256": "ec6531dccec67d94a604f8eeb9f5abc02d0cff71fc0576b1c793ceb2d4912c51",
+      "size_bytes": 4721
+    },
+    {
+      "name": "protocol.mjs",
+      "sha256": "9452462a5107c37b0dde8b6178696832061f9ef2116144e8060d2e5aa6982674",
+      "size_bytes": 3383
+    },
+    {
+      "name": "README.md",
+      "sha256": "413ac35f38f61f649d0e7ca7820d9954e6ee180b494c7e3659bce60deb0fa5b6",
+      "size_bytes": 812
+    },
+    {
+      "name": "scene.js",
+      "sha256": "6387dedaf6a59ec2ff087e3be3e5974fec576a71608854058d6b990891ac9d31",
+      "size_bytes": 7632
+    },
+    {
+      "name": "styles.css",
+      "sha256": "51e2d9abc1b51b16259cea96819de586f0f1e780693caac05bbedaedca275696",
+      "size_bytes": 6582
+    },
+    {
+      "name": "trial-config.json",
+      "sha256": "9d5cac82b8cf6704aed1059d93601ee953417da8574cc27ba8ab411ae9ba0417",
+      "size_bytes": 69
+    },
+    {
+      "name": "vendor/BufferGeometryUtils.js",
+      "sha256": "3a6701d824adfe05dc28c09b6c1d64aeab9a183bc3b944d85f15f596e5c6c2b3",
+      "size_bytes": 31918
+    },
+    {
+      "name": "vendor/GLTFLoader.js",
+      "sha256": "1f9b02acfbf219a6ebb77f09e355500449a3ba9e6a77d87e0de72c0b9315ea4e",
+      "size_bytes": 108527
+    },
+    {
+      "name": "vendor/TextureUtils.js",
+      "sha256": "d485829499c59dc16167167ded61eb2e9dadab89e39d18c8b281929c7a064627",
+      "size_bytes": 2379
+    },
+    {
+      "name": "vendor/THREE-LICENSE.txt",
+      "sha256": "852e0e8699169bf9f6fdc6bda3e682d078dcbc738b5d33e74df594721bff271d",
+      "size_bytes": 1081
+    },
+    {
+      "name": "vendor/three.min.js",
+      "sha256": "170c6789f43217c96b3170f4b42fafe135de7f7cd48497a4218f9757ee1d49fa",
+      "size_bytes": 669884
+    },
+    {
+      "name": "vendor/three.module.js",
+      "sha256": "76dea8151bc9352aef3528b4262e249b2604f62543828328db978d060d61a495",
+      "size_bytes": 1272972
+    }
+  ],
+  "evidence_boundary": "Static technical integration; art/human/mobile/live-AI acceptance not claimed"
+}
