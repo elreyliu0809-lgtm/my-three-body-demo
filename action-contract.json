@@ -1,0 +1,786 @@
+{
+  "schema_version": "1.0.0",
+  "candidate_id": "MT_ACTION_LIBRARY_R02",
+  "revision": "1.0.1",
+  "adoption": "NOT_ACCEPTED",
+  "kind": "shared_rigid_segment_animation_library_candidate",
+  "unit": "metre",
+  "runtime_axes": {
+    "up": "+Y",
+    "forward": "-Z"
+  },
+  "source_axes": {
+    "up": "+Z",
+    "forward": "+Y"
+  },
+  "skeleton": {
+    "object": "PlayerRig",
+    "root": "root",
+    "joints": [
+      "root",
+      "pelvis",
+      "spine",
+      "chest",
+      "head",
+      "thigh_L",
+      "shin_L",
+      "foot_L",
+      "upperarm_L",
+      "forearm_L",
+      "hand_L",
+      "thigh_R",
+      "shin_R",
+      "foot_R",
+      "upperarm_R",
+      "forearm_R",
+      "hand_R"
+    ],
+    "compatible_reference": "MT_PLAYER_ACTION_R01",
+    "binding": "same reference rest matrices and17 joint names; validate inverse bind matrices before applying clips to another mesh",
+    "retargeting": "No arbitrary humanoid or NPC retarget proved",
+    "hand_shape": "geometric mitten; no finger articulation or grasp",
+    "inverse_bind_sha256": "93cd231ce7dad1d0c552904680a60fa2481cc25cec373dc2d61d110eded96884"
+  },
+  "stage_binding": {
+    "id": "STAGE_R01_COUNTER104_OFFICER118",
+    "table_top_y_m": 1.04,
+    "officer_root": [
+      -0.25,
+      0,
+      -1.18
+    ],
+    "jump": "External frozen R01 jump_to_table only, no arbitrary-height jump in this library"
+  },
+  "clips": [
+    {
+      "name": "idle_breathe",
+      "duration_s": 2.0,
+      "loop": true,
+      "root_mode": "in_place",
+      "root_end_local_runtime_m": [
+        0,
+        0,
+        0
+      ],
+      "root_end_yaw_rad": 0,
+      "posture_pre": "standing",
+      "posture_post": "standing",
+      "events": [],
+      "parameters": {
+        "playback_rate": {
+          "min": 0.75,
+          "max": 1.25,
+          "author_verified": 1.0
+        },
+        "mirroring": false,
+        "strength_or_damage": false
+      },
+      "cancel": {
+        "policy": "settle_to_supported_pose",
+        "never_teleport": true,
+        "recovery_required": false
+      },
+      "blend": "same-rig transition candidate .10s; transition foot lock/IK requires engine evidence; do not blend crouch directly into standing idle"
+    },
+    {
+      "name": "walk_in_place",
+      "duration_s": 0.8,
+      "loop": true,
+      "root_mode": "in_place",
+      "root_end_local_runtime_m": [
+        0,
+        0,
+        0
+      ],
+      "root_end_yaw_rad": 0,
+      "posture_pre": "standing",
+      "posture_post": "standing",
+      "events": [
+        {
+          "time_s": 0,
+          "type": "foot_plant",
+          "foot": "L"
+        },
+        {
+          "time_s": 0.4,
+          "type": "foot_plant",
+          "foot": "R"
+        }
+      ],
+      "parameters": {
+        "playback_rate": {
+          "min": 0.4,
+          "max": 2.1,
+          "author_verified": 1.0,
+          "cadence_formula": "actual_horizontal_speed_mps / .76"
+        },
+        "mirroring": false,
+        "strength_or_damage": false
+      },
+      "cancel": {
+        "policy": "settle_to_supported_pose",
+        "never_teleport": true,
+        "recovery_required": false
+      },
+      "blend": "same-rig transition candidate .10s; transition foot lock/IK requires engine evidence; do not blend crouch directly into standing idle",
+      "speed_mps": 0.76
+    },
+    {
+      "name": "stop_settle",
+      "duration_s": 0.6,
+      "loop": false,
+      "root_mode": "in_place",
+      "root_end_local_runtime_m": [
+        0,
+        0,
+        0
+      ],
+      "root_end_yaw_rad": 0,
+      "posture_pre": "standing",
+      "posture_post": "standing",
+      "events": [
+        {
+          "time_s": 0.6,
+          "type": "clip_complete",
+          "not_world_success": true
+        }
+      ],
+      "parameters": {
+        "playback_rate": {
+          "min": 0.75,
+          "max": 1.25,
+          "author_verified": 1.0
+        },
+        "mirroring": false,
+        "strength_or_damage": false
+      },
+      "cancel": {
+        "policy": "settle_to_supported_pose",
+        "never_teleport": true,
+        "recovery_required": false
+      },
+      "blend": "same-rig transition candidate .10s; transition foot lock/IK requires engine evidence; do not blend crouch directly into standing idle"
+    },
+    {
+      "name": "turn_left_90",
+      "duration_s": 1.2,
+      "loop": false,
+      "root_mode": "embedded",
+      "root_end_local_runtime_m": [
+        0,
+        0,
+        0
+      ],
+      "root_end_yaw_rad": 1.5707963267948966,
+      "posture_pre": "standing",
+      "posture_post": "standing",
+      "events": [
+        {
+          "time_s": 1.2,
+          "type": "clip_complete",
+          "not_world_success": true
+        }
+      ],
+      "parameters": {
+        "playback_rate": {
+          "min": 0.75,
+          "max": 1.25,
+          "author_verified": 1.0
+        },
+        "mirroring": false,
+        "strength_or_damage": false
+      },
+      "cancel": {
+        "policy": "settle_to_supported_pose",
+        "never_teleport": true,
+        "recovery_required": true
+      },
+      "blend": "same-rig transition candidate .10s; transition foot lock/IK requires engine evidence; do not blend crouch directly into standing idle"
+    },
+    {
+      "name": "turn_right_90",
+      "duration_s": 1.2,
+      "loop": false,
+      "root_mode": "embedded",
+      "root_end_local_runtime_m": [
+        0,
+        0,
+        0
+      ],
+      "root_end_yaw_rad": -1.5707963267948966,
+      "posture_pre": "standing",
+      "posture_post": "standing",
+      "events": [
+        {
+          "time_s": 1.2,
+          "type": "clip_complete",
+          "not_world_success": true
+        }
+      ],
+      "parameters": {
+        "playback_rate": {
+          "min": 0.75,
+          "max": 1.25,
+          "author_verified": 1.0
+        },
+        "mirroring": false,
+        "strength_or_damage": false
+      },
+      "cancel": {
+        "policy": "settle_to_supported_pose",
+        "never_teleport": true,
+        "recovery_required": true
+      },
+      "blend": "same-rig transition candidate .10s; transition foot lock/IK requires engine evidence; do not blend crouch directly into standing idle"
+    },
+    {
+      "name": "look_left",
+      "duration_s": 1.2,
+      "loop": false,
+      "root_mode": "in_place",
+      "root_end_local_runtime_m": [
+        0,
+        0,
+        0
+      ],
+      "root_end_yaw_rad": 0,
+      "posture_pre": "standing",
+      "posture_post": "standing",
+      "events": [
+        {
+          "time_s": 1.2,
+          "type": "clip_complete",
+          "not_world_success": true
+        }
+      ],
+      "parameters": {
+        "playback_rate": {
+          "min": 0.75,
+          "max": 1.25,
+          "author_verified": 1.0
+        },
+        "mirroring": false,
+        "strength_or_damage": false
+      },
+      "cancel": {
+        "policy": "settle_to_supported_pose",
+        "never_teleport": true,
+        "recovery_required": false
+      },
+      "blend": "same-rig transition candidate .10s; transition foot lock/IK requires engine evidence; do not blend crouch directly into standing idle"
+    },
+    {
+      "name": "look_right",
+      "duration_s": 1.2,
+      "loop": false,
+      "root_mode": "in_place",
+      "root_end_local_runtime_m": [
+        0,
+        0,
+        0
+      ],
+      "root_end_yaw_rad": 0,
+      "posture_pre": "standing",
+      "posture_post": "standing",
+      "events": [
+        {
+          "time_s": 1.2,
+          "type": "clip_complete",
+          "not_world_success": true
+        }
+      ],
+      "parameters": {
+        "playback_rate": {
+          "min": 0.75,
+          "max": 1.25,
+          "author_verified": 1.0
+        },
+        "mirroring": false,
+        "strength_or_damage": false
+      },
+      "cancel": {
+        "policy": "settle_to_supported_pose",
+        "never_teleport": true,
+        "recovery_required": false
+      },
+      "blend": "same-rig transition candidate .10s; transition foot lock/IK requires engine evidence; do not blend crouch directly into standing idle"
+    },
+    {
+      "name": "point_forward",
+      "duration_s": 1.4,
+      "loop": false,
+      "root_mode": "in_place",
+      "root_end_local_runtime_m": [
+        0,
+        0,
+        0
+      ],
+      "root_end_yaw_rad": 0,
+      "posture_pre": "standing",
+      "posture_post": "standing",
+      "events": [
+        {
+          "time_s": 1.4,
+          "type": "clip_complete",
+          "not_world_success": true
+        }
+      ],
+      "parameters": {
+        "playback_rate": {
+          "min": 0.75,
+          "max": 1.25,
+          "author_verified": 1.0
+        },
+        "mirroring": false,
+        "strength_or_damage": false
+      },
+      "cancel": {
+        "policy": "settle_to_supported_pose",
+        "never_teleport": true,
+        "recovery_required": false
+      },
+      "blend": "same-rig transition candidate .10s; transition foot lock/IK requires engine evidence; do not blend crouch directly into standing idle"
+    },
+    {
+      "name": "wave_right",
+      "duration_s": 1.6,
+      "loop": false,
+      "root_mode": "in_place",
+      "root_end_local_runtime_m": [
+        0,
+        0,
+        0
+      ],
+      "root_end_yaw_rad": 0,
+      "posture_pre": "standing",
+      "posture_post": "standing",
+      "events": [
+        {
+          "time_s": 1.6,
+          "type": "clip_complete",
+          "not_world_success": true
+        }
+      ],
+      "parameters": {
+        "playback_rate": {
+          "min": 0.75,
+          "max": 1.25,
+          "author_verified": 1.0
+        },
+        "mirroring": false,
+        "strength_or_damage": false
+      },
+      "cancel": {
+        "policy": "settle_to_supported_pose",
+        "never_teleport": true,
+        "recovery_required": false
+      },
+      "blend": "same-rig transition candidate .10s; transition foot lock/IK requires engine evidence; do not blend crouch directly into standing idle"
+    },
+    {
+      "name": "reach_forward",
+      "duration_s": 1.4,
+      "loop": false,
+      "root_mode": "in_place",
+      "root_end_local_runtime_m": [
+        0,
+        0,
+        0
+      ],
+      "root_end_yaw_rad": 0,
+      "posture_pre": "standing",
+      "posture_post": "standing",
+      "events": [
+        {
+          "time_s": 0.7,
+          "type": "reach_peak",
+          "effector": "hand_R",
+          "not_grasp": true
+        },
+        {
+          "time_s": 1.4,
+          "type": "clip_complete",
+          "not_world_success": true
+        }
+      ],
+      "parameters": {
+        "playback_rate": {
+          "min": 0.75,
+          "max": 1.25,
+          "author_verified": 1.0
+        },
+        "mirroring": false,
+        "strength_or_damage": false
+      },
+      "cancel": {
+        "policy": "settle_to_supported_pose",
+        "never_teleport": true,
+        "recovery_required": false
+      },
+      "blend": "same-rig transition candidate .10s; transition foot lock/IK requires engine evidence; do not blend crouch directly into standing idle"
+    },
+    {
+      "name": "punch_right",
+      "duration_s": 0.9,
+      "loop": false,
+      "root_mode": "in_place",
+      "root_end_local_runtime_m": [
+        0,
+        0,
+        0
+      ],
+      "root_end_yaw_rad": 0,
+      "posture_pre": "standing",
+      "posture_post": "standing",
+      "events": [
+        {
+          "time_s": 0.36,
+          "type": "interaction_window_open",
+          "effector": "hand_R"
+        },
+        {
+          "time_s": 0.48,
+          "type": "interaction_window_close",
+          "effector": "hand_R"
+        },
+        {
+          "time_s": 0.9,
+          "type": "clip_complete",
+          "not_world_success": true
+        }
+      ],
+      "parameters": {
+        "playback_rate": {
+          "min": 0.75,
+          "max": 1.25,
+          "author_verified": 1.0
+        },
+        "mirroring": false,
+        "strength_or_damage": false
+      },
+      "cancel": {
+        "policy": "settle_to_supported_pose",
+        "never_teleport": true,
+        "recovery_required": false
+      },
+      "blend": "same-rig transition candidate .10s; transition foot lock/IK requires engine evidence; do not blend crouch directly into standing idle"
+    },
+    {
+      "name": "push_forward",
+      "duration_s": 1.0,
+      "loop": false,
+      "root_mode": "in_place",
+      "root_end_local_runtime_m": [
+        0,
+        0,
+        0
+      ],
+      "root_end_yaw_rad": 0,
+      "posture_pre": "standing",
+      "posture_post": "standing",
+      "events": [
+        {
+          "time_s": 0.38,
+          "type": "interaction_window_open",
+          "effector": "both_hands"
+        },
+        {
+          "time_s": 0.6,
+          "type": "interaction_window_close",
+          "effector": "both_hands"
+        },
+        {
+          "time_s": 1.0,
+          "type": "clip_complete",
+          "not_world_success": true
+        }
+      ],
+      "parameters": {
+        "playback_rate": {
+          "min": 0.75,
+          "max": 1.25,
+          "author_verified": 1.0
+        },
+        "mirroring": false,
+        "strength_or_damage": false
+      },
+      "cancel": {
+        "policy": "settle_to_supported_pose",
+        "never_teleport": true,
+        "recovery_required": false
+      },
+      "blend": "same-rig transition candidate .10s; transition foot lock/IK requires engine evidence; do not blend crouch directly into standing idle"
+    },
+    {
+      "name": "dance_loop",
+      "duration_s": 2.4,
+      "loop": true,
+      "root_mode": "in_place",
+      "root_end_local_runtime_m": [
+        0,
+        0,
+        0
+      ],
+      "root_end_yaw_rad": 0,
+      "posture_pre": "standing",
+      "posture_post": "standing",
+      "events": [],
+      "parameters": {
+        "playback_rate": {
+          "min": 0.75,
+          "max": 1.25,
+          "author_verified": 1.0
+        },
+        "mirroring": false,
+        "strength_or_damage": false
+      },
+      "cancel": {
+        "policy": "settle_to_supported_pose",
+        "never_teleport": true,
+        "recovery_required": false
+      },
+      "blend": "same-rig transition candidate .10s; transition foot lock/IK requires engine evidence; do not blend crouch directly into standing idle"
+    },
+    {
+      "name": "dodge_back",
+      "duration_s": 1.1,
+      "loop": false,
+      "root_mode": "embedded",
+      "root_end_local_runtime_m": [
+        0,
+        0,
+        0.42
+      ],
+      "root_end_yaw_rad": 0,
+      "posture_pre": "standing",
+      "posture_post": "standing",
+      "events": [
+        {
+          "time_s": 0.95,
+          "type": "support_check_required"
+        },
+        {
+          "time_s": 1.1,
+          "type": "clip_complete",
+          "not_world_success": true
+        }
+      ],
+      "parameters": {
+        "playback_rate": {
+          "min": 0.75,
+          "max": 1.25,
+          "author_verified": 1.0
+        },
+        "mirroring": false,
+        "strength_or_damage": false
+      },
+      "cancel": {
+        "policy": "settle_to_supported_pose",
+        "never_teleport": true,
+        "recovery_required": true
+      },
+      "blend": "same-rig transition candidate .10s; transition foot lock/IK requires engine evidence; do not blend crouch directly into standing idle"
+    },
+    {
+      "name": "guard_front",
+      "duration_s": 1.2,
+      "loop": false,
+      "root_mode": "in_place",
+      "root_end_local_runtime_m": [
+        0,
+        0,
+        0
+      ],
+      "root_end_yaw_rad": 0,
+      "posture_pre": "standing",
+      "posture_post": "standing",
+      "events": [
+        {
+          "time_s": 0.36,
+          "type": "guard_window_open"
+        },
+        {
+          "time_s": 0.84,
+          "type": "guard_window_close"
+        },
+        {
+          "time_s": 1.2,
+          "type": "clip_complete",
+          "not_world_success": true
+        }
+      ],
+      "parameters": {
+        "playback_rate": {
+          "min": 0.75,
+          "max": 1.25,
+          "author_verified": 1.0
+        },
+        "mirroring": false,
+        "strength_or_damage": false
+      },
+      "cancel": {
+        "policy": "settle_to_supported_pose",
+        "never_teleport": true,
+        "recovery_required": false
+      },
+      "blend": "same-rig transition candidate .10s; transition foot lock/IK requires engine evidence; do not blend crouch directly into standing idle"
+    },
+    {
+      "name": "recoil_front",
+      "duration_s": 0.9,
+      "loop": false,
+      "root_mode": "in_place",
+      "root_end_local_runtime_m": [
+        0,
+        0,
+        0
+      ],
+      "root_end_yaw_rad": 0,
+      "posture_pre": "standing",
+      "posture_post": "standing",
+      "events": [
+        {
+          "time_s": 0.9,
+          "type": "clip_complete",
+          "not_world_success": true
+        }
+      ],
+      "parameters": {
+        "playback_rate": {
+          "min": 0.75,
+          "max": 1.25,
+          "author_verified": 1.0
+        },
+        "mirroring": false,
+        "strength_or_damage": false
+      },
+      "cancel": {
+        "policy": "settle_to_supported_pose",
+        "never_teleport": true,
+        "recovery_required": false
+      },
+      "blend": "same-rig transition candidate .10s; transition foot lock/IK requires engine evidence; do not blend crouch directly into standing idle"
+    },
+    {
+      "name": "crouch_down",
+      "duration_s": 0.8,
+      "loop": false,
+      "root_mode": "in_place",
+      "root_end_local_runtime_m": [
+        0,
+        0,
+        0
+      ],
+      "root_end_yaw_rad": 0,
+      "posture_pre": "standing",
+      "posture_post": "crouched",
+      "events": [
+        {
+          "time_s": 0.8,
+          "type": "clip_complete",
+          "not_world_success": true
+        }
+      ],
+      "parameters": {
+        "playback_rate": {
+          "min": 0.75,
+          "max": 1.25,
+          "author_verified": 1.0
+        },
+        "mirroring": false,
+        "strength_or_damage": false
+      },
+      "cancel": {
+        "policy": "settle_to_supported_pose",
+        "never_teleport": true,
+        "recovery_required": true
+      },
+      "blend": "same-rig transition candidate .10s; transition foot lock/IK requires engine evidence; do not blend crouch directly into standing idle"
+    },
+    {
+      "name": "stand_up",
+      "duration_s": 0.8,
+      "loop": false,
+      "root_mode": "in_place",
+      "root_end_local_runtime_m": [
+        0,
+        0,
+        0
+      ],
+      "root_end_yaw_rad": 0,
+      "posture_pre": "crouched",
+      "posture_post": "standing",
+      "events": [
+        {
+          "time_s": 0.8,
+          "type": "clip_complete",
+          "not_world_success": true
+        }
+      ],
+      "parameters": {
+        "playback_rate": {
+          "min": 0.75,
+          "max": 1.25,
+          "author_verified": 1.0
+        },
+        "mirroring": false,
+        "strength_or_damage": false
+      },
+      "cancel": {
+        "policy": "settle_to_supported_pose",
+        "never_teleport": true,
+        "recovery_required": true
+      },
+      "blend": "same-rig transition candidate .10s; transition foot lock/IK requires engine evidence; do not blend crouch directly into standing idle"
+    }
+  ],
+  "parameters_policy": "Only1x full-body kinematics sampled at author time. Other playback rates are consumer candidates, not proven contact outcomes. Heading and target positions are adapter inputs; clips never set damage, target displacement or story facts.",
+  "execution_contract": {
+    "capabilities": [
+      "play_clip",
+      "sample_clip",
+      "bounded_embedded_root",
+      "marker_events",
+      "posture_pre_post",
+      "pose_preserving_root_transfer"
+    ],
+    "engine_required": [
+      "navigation and full swept collision",
+      "support and continuous stable contact",
+      "target knowledge and reach validation",
+      "hit/dodge/block arbitration",
+      "cancel/recovery and control lease",
+      "NPC compatible rig",
+      "world-version and actor/request identity checks"
+    ],
+    "preconditions": [
+      "same skeleton fingerprint",
+      "exclusive actor ACTION lease",
+      "supported starting floor and declared posture",
+      "fresh world_version and request/actor target identities",
+      "clear root trajectory and whole body envelope"
+    ],
+    "completion": "clip_complete is pose playback only; world success requires actual engine observations and .25s continuous supported stable state where applicable",
+    "outcomes": [
+      "ALLOW",
+      "WORLD_DENIED",
+      "ENGINE_UNSUPPORTED",
+      "EXECUTION_FAILED",
+      "CANCELLED"
+    ],
+    "model_output": "Structured plan data only; no executable code; unknown primitives or parameters rejected",
+    "physical_events": "punch/push/guard windows are opportunities for engine contact, never automatic hit/block/force",
+    "interruption": "driver can request cancellation and hold actual pose; host must settle at supported pose before releasing ACTION; cancel never fabricates completion"
+  },
+  "external_dependencies": [
+    {
+      "sha256": "6d73e96914887077d579219e53a24532bb4d493811be7c91f5f76532e25d8a9d",
+      "purpose": "frozen reference geometry/rest skeleton and walk implementation"
+    },
+    {
+      "sha256": "98744ab864908388c0459e3e6f3968324f139b3a6995809d753f9bd534ec79c3",
+      "purpose": "external fixed-stage jump; not replaced"
+    }
+  ],
+  "evidence_ceiling": "Author native build and same-identity consumption; no live-model intent understanding, full game integration, independent QA or human acceptance"
+}

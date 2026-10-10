@@ -24,3 +24,7 @@ html,body{height:100%;overflow:hidden}.stage{height:100dvh;min-height:0!importan
 @media(max-height:500px){.response{left:190px;bottom:100px;max-height:120px}.touch-pad{bottom:75px}.panel textarea{min-height:80px}.panel header h2{font-size:18px}}
 
 [hidden]{display:none!important}
+
+/* Keep the contextual read hint above the response card. */
+#prompt{top:auto;bottom:290px;left:50%;transform:translateX(-50%);max-width:calc(100% - 32px)}
+@media(max-width:700px){#prompt{bottom:310px;left:12px;right:12px;transform:none;font-size:13px}}
