@@ -1,30 +1,30 @@
-import {validatePerformance,ACTORS} from './protocol.mjs';
-const home={player:{x:-.78,z:1.13,yaw:Math.PI},officer:{x:-.25,z:-.70,yaw:.12},companion:{x:-1.62,z:1.30,yaw:1.8}};
-const endpoint=(position,id)=>position==='queue'&&id!=='officer'?(id==='player'?{x:3.15,z:.22,yaw:Math.PI}:{x:3.71,z:1.10,yaw:Math.PI}):position==='side_passage'&&id==='player'?{x:-2.25,z:-1.04,yaw:4.4}:home[id];
-const smooth=n=>{n=Math.max(0,Math.min(1,n));return n*n*(3-2*n);};
-const mix=(a,b,t)=>({x:a.x+(b.x-a.x)*t,z:a.z+(b.z-a.z)*t,yaw:a.yaw+(b.yaw-a.yaw)*t});
-export class PerformanceDirector{
-  constructor(){this.restore({position:'counter',application:'offered'});}
-  restore(state){this.state=structuredClone(state);this.roots=Object.fromEntries(ACTORS.map(id=>[id,{...endpoint(state.position,id)}]));this.from=structuredClone(this.roots);this.to=structuredClone(this.roots);this.beats=[];this.proposal=null;this.duration=0;this.moving=false;}
-  start(proposal,state){const beats=validatePerformance(proposal.performance,proposal.action);this.from=structuredClone(this.roots);this.state=structuredClone(state);this.to=Object.fromEntries(ACTORS.map(id=>[id,{...endpoint(state.position,id)}]));this.moving=ACTORS.some(id=>Math.hypot(this.from[id].x-this.to[id].x,this.from[id].z-this.to[id].z)>.05);this.beats=beats;this.proposal=proposal;this.duration=Math.max(...beats.map(b=>b.at+b.seconds),this.moving?5:0);return this.duration;}
-  sample(seconds){const t=Math.max(0,seconds),done=t>=this.duration;const poses=Object.fromEntries(ACTORS.map(id=>[id,{root:{...this.to[id]},gaze:null,nod:0,talking:0,take:0,push:0,hold:0,walk:0}]));
-    for(const id of ACTORS){const a=this.from[id],b=this.to[id];if(this.moving&&id!=='officer'&&Math.hypot(a.x-b.x,a.z-b.z)>.05){const u=smooth(t/5);let via;
-      if(this.state.position==='side_passage')via={x:-1.97,z:Math.max(a.z,1.13),yaw:4.4};
-      else if(this.state.position==='queue')via={x:1.45,z:id==='player'?1.13:1.75,yaw:Math.PI/2};
-      else via={x:1.45,z:id==='player'?1.13:1.75,yaw:Math.PI};
-      poses[id].root=u<.48?mix(a,via,u/.48):mix(via,b,(u-.48)/.52);poses[id].walk=t<5?Math.sin(t*7)*.16:0;
-    }}
-    let caption=null;const active=[];
-    for(const b of this.beats){const age=t-b.at;if(age<0)continue;const p=poses[b.actor],inside=age<b.seconds,blend=Math.sin(Math.PI*Math.min(1,age/b.seconds));
-      if(inside)active.push({...b,age});
-      if(b.verb==='look_at'&&inside)p.gaze={target:b.target,weight:Math.min(1,blend*2)};
-      if(b.verb==='nod'&&inside)p.nod=Math.sin(age*5)*.075*blend;
-      if(b.verb==='take_paper'&&inside)p.take=smooth(age/b.seconds);
-      if(b.verb==='hold_paper'&&inside)p.hold=blend;
-      if(b.verb==='push_paper'&&inside)p.push=blend;
-      if(b.verb==='talk'&&inside){p.talking=blend;caption={speaker:b.actor,line:b.actor==='officer'?this.proposal.npc:this.proposal.companion};}
-    }
-    if(done)this.roots=structuredClone(this.to);
-    return {poses,active,caption,done,duration:this.duration,state:this.state,seconds:t};
+import {pathTo,move,canOccupy} from './navigation.mjs';
+export class ActionDirector{
+ constructor(nav,table,native=null){this.nav=nav;this.table=table;this.native=native;this.done=true;this.events=[];this.phase='idle';}
+ start(position,intent){
+  if(!this.done)return {ok:false,reason:'ACTION_BUSY'};
+  if(intent.kind!=='jump_counter')return {ok:false,reason:'ENGINE_CAPABILITY_MISSING'};
+  if(position.y>.2)return {ok:false,reason:'ALREADY_ABOVE_FLOOR'};
+  const c=this.table,goal={x:(c.min[0]+c.max[0])/2,y:0,z:this.native?this.native.start_z:c.max[2]+.45};
+  const path=pathTo(position,goal,this.nav);if(!path.length)return {ok:false,reason:'WORLD_PATH_BLOCKED'};
+  this.path=path;this.index=0;this.phase='approach';this.elapsed=0;this.done=false;this.success=false;this.cancelRequested=false;this.events=[];this.phaseEvents=[];this.goal=goal;this.landing={x:goal.x,y:c.max[1],z:(c.min[2]+c.max[2])/2};this.last={...position};return {ok:true,plan:['approach','crouch','takeoff','airborne','landing','stable']};
+ }
+ cancel(){if(['takeoff','airborne','landing','native_airborne','native_landing','native_takeoff'].includes(this.phase)){this.cancelRequested=true;return 'SAFE_LANDING_PENDING';}this.done=true;this.success=false;this.phase='cancelled';return 'CANCELLED';}
+ tick(dt,position){
+  let p={...position};dt=Math.min(dt,.05);if(this.done)return {position:p,phase:this.phase,done:true};
+  if(this.phase==='approach'){
+   const goal=this.path[this.index],dx=goal.x-p.x,dz=goal.z-p.z,d=Math.hypot(dx,dz),step=Math.min(d,(this.native?.walk_speed??1.65)*dt);if(d<.035){p={...goal};this.index++;if(this.index>=this.path.length){this.phase=this.native?'native_approach':'crouch';this.elapsed=0;this.launch={...p};}}else{const next=move(p,{x:dx/d*step,z:dz/d*step},this.nav);if(Math.hypot(next.x-p.x,next.z-p.z)<1e-6){this.done=true;this.phase='failed';this.reason='WORLD_PATH_BLOCKED';}p=next;}
+  }else if(this.phase.startsWith('native_')){
+   this.elapsed=Math.min(this.native.duration,this.elapsed+dt);const value=this.native.sample(this.elapsed,this.launch),next=value.position;
+   if(!canOccupy(next,this.nav)){this.native.sample(Math.max(0,this.elapsed-dt),this.launch);this.done=true;this.phase='failed';this.reason='WORLD_NATIVE_SWEEP_BLOCKED';}else{p=next;this.phase='native_'+value.phase;if(this.elapsed===this.native.duration){if(Math.abs(value.feet_y-this.table.max[1])>.005){this.done=true;this.phase='failed';this.reason='NATIVE_CONTACT_MISMATCH';}else{this.nativeFeetY=value.feet_y;this.phase='stable';this.elapsed=0;}}}
+  }else if(this.phase==='crouch'){
+   this.elapsed+=dt;if(this.elapsed>=.25){this.phase='takeoff';this.elapsed=0;this.launch={...p};}
+  }else if(['takeoff','airborne','landing'].includes(this.phase)){
+   this.elapsed+=dt;const t=Math.min(1,this.elapsed/.96),u=Math.max(0,(t-.35)/.65),next={x:this.launch.x+(this.landing.x-this.launch.x)*u,z:this.launch.z+(this.landing.z-this.launch.z)*u,y:this.landing.y*t+4*.9*t*(1-t)};
+   if(!canOccupy(next,this.nav)){this.done=true;this.phase='failed';this.reason='WORLD_SWEEP_BLOCKED';}else{p=next;this.phase=t<.12?'takeoff':t<.87?'airborne':'landing';if(t===1){p={...this.landing};this.phase='stable';this.elapsed=0;}}
+  }else if(this.phase==='stable'){
+   this.elapsed+=dt;if(this.elapsed>=.25){this.done=true;this.success=!this.cancelRequested;const proof={stable:true,feet_y:this.nativeFeetY??p.y,tabletop_y:this.table.max[1]};this.events.push(this.cancelRequested?{type:'body_settled',position:'on_counter',proof,cancelled:true}:{type:'counter_landing_stable',proof});}
   }
+  if(this.phaseEvents.at(-1)?.phase!==this.phase)this.phaseEvents.push({phase:this.phase,position:{...p}});this.last=p;return {position:p,phase:this.phase,done:this.done,success:this.success,reason:this.reason,cancelRequested:this.cancelRequested};
+ }
 }

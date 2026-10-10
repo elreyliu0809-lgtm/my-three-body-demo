@@ -1,0 +1,12 @@
+{
+ "candidate_id":"MT_SCENE_UI_CONTROLS_R03","mode":"EXPLICIT_LOCAL_DETERMINISTIC_NO_MODEL",
+ "positive":["跳上桌子","提交申请"],"no_execution":["不要跳上桌子","如果可以就跳上桌子","能跳上桌子吗？"],"world_infeasible":["飞到月球"],"engine_missing":["把柜台举起来","下桌子"],"live_AI_calls":0,"audio_transmission":0,
+ "narrative_candidate":"MT-RECRUITMENT-NARRATIVE-R01; local adaptation, not verified original passage",
+ "source":"design/narrative/2026-10-10_recruitment-motivation/motivation.md",
+ "notice":"地球治安军征募。申请需经筛选，录取名额有限。录取者本人可获留驻、免赴澳大利亚的承诺安排，具体生效以通知为准；同行人员不自动取得该待遇。职责包括执行三体方的转运管理命令。",
+ "reactions":{
+  "inspect":{"officer":"来申请，还是先看条件？申请我能受理，录取要等筛选。","companion":"我也想知道怎么才能留下。要是我们都申请，是各自筛选吗？"},
+  "application_submitted":{"officer":"可以，我先受理你的申请。接下来等筛选通知，受理不代表录取。","companion":"我也要看一份条件。我想自己决定要不要申请。"},
+  "counter_landing_stable":{"officer":"先下来。这里要收申请，你挡住窗口了。","companion":"下来再说，我还在这里。"}
+ }
+}

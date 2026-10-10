@@ -1,0 +1,1771 @@
+{
+  "contracts": {
+    "layout": {
+      "candidate_id": "MT_STAGE_R01",
+      "unit": "metre",
+      "runtime_up": "+Y",
+      "runtime_forward": "+Z",
+      "bounds": [
+        -7,
+        7,
+        -7,
+        9
+      ],
+      "height": 5.2,
+      "colliders": [
+        {
+          "name": "floor",
+          "min": [
+            -7.2,
+            -0.3,
+            -7.199999999999999
+          ],
+          "max": [
+            7.2,
+            0,
+            9.2
+          ],
+          "camera": true,
+          "character": false
+        },
+        {
+          "name": "wall_left",
+          "min": [
+            -7.16,
+            0,
+            -7.199999999999999
+          ],
+          "max": [
+            -6.84,
+            5.2,
+            9.2
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "wall_right",
+          "min": [
+            6.84,
+            0,
+            -7.199999999999999
+          ],
+          "max": [
+            7.16,
+            5.2,
+            9.2
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "entrance_wall_-4.3",
+          "min": [
+            -7,
+            0,
+            8.84
+          ],
+          "max": [
+            -1.5999999999999996,
+            5.2,
+            9.16
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "entrance_wall_4.3",
+          "min": [
+            1.5999999999999996,
+            0,
+            8.84
+          ],
+          "max": [
+            7,
+            5.2,
+            9.16
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "entrance_lintel",
+          "min": [
+            -1.6,
+            3.1000000000000005,
+            8.84
+          ],
+          "max": [
+            1.6,
+            5.2,
+            9.16
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "rear_wall_left",
+          "min": [
+            -7,
+            0,
+            -7.16
+          ],
+          "max": [
+            3,
+            5.2,
+            -6.84
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "rear_wall_right",
+          "min": [
+            5.800000000000001,
+            0,
+            -7.16
+          ],
+          "max": [
+            7,
+            5.2,
+            -6.84
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "exit_lintel",
+          "min": [
+            3.0000000000000004,
+            3.1000000000000005,
+            -7.16
+          ],
+          "max": [
+            5.800000000000001,
+            5.2,
+            -6.84
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "roof_left",
+          "min": [
+            -7,
+            5.2,
+            -7.199999999999999
+          ],
+          "max": [
+            -2.5999999999999996,
+            5.44,
+            9.2
+          ],
+          "camera": true,
+          "character": false
+        },
+        {
+          "name": "roof_right",
+          "min": [
+            2.5999999999999996,
+            5.2,
+            -7.199999999999999
+          ],
+          "max": [
+            7,
+            5.44,
+            9.2
+          ],
+          "camera": true,
+          "character": false
+        },
+        {
+          "name": "roof_center",
+          "min": [
+            -2.6,
+            5.24,
+            -7.199999999999999
+          ],
+          "max": [
+            2.6,
+            5.4399999999999995,
+            9.2
+          ],
+          "camera": true,
+          "character": false
+        },
+        {
+          "name": "roof_beam_-5",
+          "min": [
+            -7,
+            4.83,
+            -5.175
+          ],
+          "max": [
+            7,
+            5.130000000000001,
+            -4.825
+          ],
+          "camera": true,
+          "character": false
+        },
+        {
+          "name": "column_-5.1_-5",
+          "min": [
+            -5.319999999999999,
+            0,
+            -5.22
+          ],
+          "max": [
+            -4.88,
+            4.9,
+            -4.78
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "column_5.1_-5",
+          "min": [
+            4.88,
+            0,
+            -5.22
+          ],
+          "max": [
+            5.319999999999999,
+            4.9,
+            -4.78
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "roof_beam_0",
+          "min": [
+            -7,
+            4.83,
+            -0.175
+          ],
+          "max": [
+            7,
+            5.130000000000001,
+            0.175
+          ],
+          "camera": true,
+          "character": false
+        },
+        {
+          "name": "column_-5.1_0",
+          "min": [
+            -5.319999999999999,
+            0,
+            -0.22
+          ],
+          "max": [
+            -4.88,
+            4.9,
+            0.22
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "column_5.1_0",
+          "min": [
+            4.88,
+            0,
+            -0.22
+          ],
+          "max": [
+            5.319999999999999,
+            4.9,
+            0.22
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "roof_beam_5",
+          "min": [
+            -7,
+            4.83,
+            4.825
+          ],
+          "max": [
+            7,
+            5.130000000000001,
+            5.175
+          ],
+          "camera": true,
+          "character": false
+        },
+        {
+          "name": "column_-5.1_5",
+          "min": [
+            -5.319999999999999,
+            0,
+            4.78
+          ],
+          "max": [
+            -4.88,
+            4.9,
+            5.22
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "column_5.1_5",
+          "min": [
+            4.88,
+            0,
+            4.78
+          ],
+          "max": [
+            5.319999999999999,
+            4.9,
+            5.22
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "backstage_partition_left",
+          "min": [
+            -6.85,
+            0,
+            -2.69
+          ],
+          "max": [
+            -4.35,
+            3.4,
+            -2.5100000000000002
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "backstage_partition_right",
+          "min": [
+            -3.1,
+            0,
+            -2.69
+          ],
+          "max": [
+            -2.1,
+            3.4,
+            -2.5100000000000002
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "backstage_lintel",
+          "min": [
+            -4.5,
+            2.52,
+            -2.69
+          ],
+          "max": [
+            -3.0999999999999996,
+            3.4,
+            -2.5100000000000002
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "backstage_canopy",
+          "min": [
+            -6.85,
+            2.49,
+            -6.6
+          ],
+          "max": [
+            -2.15,
+            2.67,
+            -2.8000000000000003
+          ],
+          "camera": true,
+          "character": false
+        },
+        {
+          "name": "counter_proxy",
+          "min": [
+            -1.4,
+            0,
+            -0.71
+          ],
+          "max": [
+            0.8999999999999999,
+            0.98,
+            0.29000000000000004
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "queue_post_2.65_-4.6",
+          "min": [
+            2.5949999999999998,
+            0,
+            -4.654999999999999
+          ],
+          "max": [
+            2.705,
+            0.92,
+            -4.545
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "queue_bar_2.65_-4.6",
+          "min": [
+            2.6125,
+            0.7625000000000001,
+            -4.625
+          ],
+          "max": [
+            2.6875,
+            0.8375,
+            -3.4749999999999996
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "queue_post_4.95_-4.6",
+          "min": [
+            4.8950000000000005,
+            0,
+            -4.654999999999999
+          ],
+          "max": [
+            5.005,
+            0.92,
+            -4.545
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "queue_bar_4.95_-4.6",
+          "min": [
+            4.9125000000000005,
+            0.7625000000000001,
+            -4.625
+          ],
+          "max": [
+            4.9875,
+            0.8375,
+            -3.4749999999999996
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "queue_post_2.65_-3.2",
+          "min": [
+            2.5949999999999998,
+            0,
+            -3.2550000000000003
+          ],
+          "max": [
+            2.705,
+            0.92,
+            -3.145
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "queue_bar_2.65_-3.2",
+          "min": [
+            2.6125,
+            0.7625000000000001,
+            -3.2250000000000005
+          ],
+          "max": [
+            2.6875,
+            0.8375,
+            -2.075
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "queue_post_4.95_-3.2",
+          "min": [
+            4.8950000000000005,
+            0,
+            -3.2550000000000003
+          ],
+          "max": [
+            5.005,
+            0.92,
+            -3.145
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "queue_bar_4.95_-3.2",
+          "min": [
+            4.9125000000000005,
+            0.7625000000000001,
+            -3.2250000000000005
+          ],
+          "max": [
+            4.9875,
+            0.8375,
+            -2.075
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "queue_post_2.65_-1.8",
+          "min": [
+            2.5949999999999998,
+            0,
+            -1.855
+          ],
+          "max": [
+            2.705,
+            0.92,
+            -1.745
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "queue_bar_2.65_-1.8",
+          "min": [
+            2.6125,
+            0.7625000000000001,
+            -1.825
+          ],
+          "max": [
+            2.6875,
+            0.8375,
+            -0.675
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "queue_post_4.95_-1.8",
+          "min": [
+            4.8950000000000005,
+            0,
+            -1.855
+          ],
+          "max": [
+            5.005,
+            0.92,
+            -1.745
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "queue_bar_4.95_-1.8",
+          "min": [
+            4.9125000000000005,
+            0.7625000000000001,
+            -1.825
+          ],
+          "max": [
+            4.9875,
+            0.8375,
+            -0.675
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "queue_post_2.65_-0.4",
+          "min": [
+            2.5949999999999998,
+            0,
+            -0.455
+          ],
+          "max": [
+            2.705,
+            0.92,
+            -0.34500000000000003
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "queue_bar_2.65_-0.4",
+          "min": [
+            2.6125,
+            0.7625000000000001,
+            -0.42499999999999993
+          ],
+          "max": [
+            2.6875,
+            0.8375,
+            0.725
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "queue_post_4.95_-0.4",
+          "min": [
+            4.8950000000000005,
+            0,
+            -0.455
+          ],
+          "max": [
+            5.005,
+            0.92,
+            -0.34500000000000003
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "queue_bar_4.95_-0.4",
+          "min": [
+            4.9125000000000005,
+            0.7625000000000001,
+            -0.42499999999999993
+          ],
+          "max": [
+            4.9875,
+            0.8375,
+            0.725
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "queue_post_2.65_1.0",
+          "min": [
+            2.5949999999999998,
+            0,
+            0.945
+          ],
+          "max": [
+            2.705,
+            0.92,
+            1.055
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "queue_bar_2.65_1.0",
+          "min": [
+            2.6125,
+            0.7625000000000001,
+            0.9750000000000001
+          ],
+          "max": [
+            2.6875,
+            0.8375,
+            2.125
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "queue_post_4.95_1.0",
+          "min": [
+            4.8950000000000005,
+            0,
+            0.945
+          ],
+          "max": [
+            5.005,
+            0.92,
+            1.055
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "queue_bar_4.95_1.0",
+          "min": [
+            4.9125000000000005,
+            0.7625000000000001,
+            0.9750000000000001
+          ],
+          "max": [
+            4.9875,
+            0.8375,
+            2.125
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "gate_frame_3.0",
+          "min": [
+            2.88,
+            0,
+            -5.590000000000001
+          ],
+          "max": [
+            3.12,
+            2.1,
+            -5.21
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "gate_frame_4.6",
+          "min": [
+            4.4799999999999995,
+            0,
+            -5.590000000000001
+          ],
+          "max": [
+            4.72,
+            2.1,
+            -5.21
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "gate_header",
+          "min": [
+            2.88,
+            2.1,
+            -5.590000000000001
+          ],
+          "max": [
+            4.72,
+            2.3000000000000003,
+            -5.21
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "bench_3.5",
+          "min": [
+            -5.35,
+            0,
+            3.25
+          ],
+          "max": [
+            -3.65,
+            0.8,
+            3.75
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "bench_5.3",
+          "min": [
+            -5.35,
+            0,
+            5.05
+          ],
+          "max": [
+            -3.65,
+            0.8,
+            5.55
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "luggage_proxy_0",
+          "min": [
+            -3.65,
+            0,
+            5.285
+          ],
+          "max": [
+            -3.35,
+            0.44,
+            5.515000000000001
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "luggage_proxy_1",
+          "min": [
+            -3.25,
+            0,
+            5.285
+          ],
+          "max": [
+            -2.95,
+            0.44,
+            5.515000000000001
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "luggage_proxy_2",
+          "min": [
+            -2.85,
+            0,
+            5.285
+          ],
+          "max": [
+            -2.5500000000000003,
+            0.44,
+            5.515000000000001
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "backstage_storage_0",
+          "min": [
+            -6.6,
+            0,
+            -3.9250000000000003
+          ],
+          "max": [
+            -6,
+            1.7,
+            -3.275
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "backstage_storage_1",
+          "min": [
+            -6.6,
+            0,
+            -4.825
+          ],
+          "max": [
+            -6,
+            1.7,
+            -4.175
+          ],
+          "camera": true,
+          "character": true
+        },
+        {
+          "name": "backstage_storage_2",
+          "min": [
+            -6.6,
+            0,
+            -5.7250000000000005
+          ],
+          "max": [
+            -6,
+            1.7,
+            -5.075
+          ],
+          "camera": true,
+          "character": true
+        }
+      ],
+      "zones": [
+        {
+          "id": "wait",
+          "label": "等候",
+          "center": [
+            -2.4,
+            0,
+            4.5
+          ],
+          "size": [
+            6.4,
+            4
+          ]
+        },
+        {
+          "id": "register",
+          "label": "登记",
+          "center": [
+            -0.5,
+            0,
+            0.1
+          ],
+          "size": [
+            4.1,
+            3.4
+          ]
+        },
+        {
+          "id": "queue",
+          "label": "排队与检查",
+          "center": [
+            3.8,
+            0,
+            -0.9
+          ],
+          "size": [
+            2,
+            9.1
+          ]
+        },
+        {
+          "id": "backstage",
+          "label": "后勤",
+          "center": [
+            -4.5,
+            0,
+            -4.8
+          ],
+          "size": [
+            4.6,
+            3.7
+          ]
+        }
+      ],
+      "anchors": {
+        "player_start": [
+          0,
+          0,
+          6.8
+        ],
+        "registration": [
+          -0.78,
+          0,
+          1.13
+        ],
+        "officer": [
+          -0.25,
+          0,
+          -1.18
+        ],
+        "companion": [
+          -1.62,
+          0,
+          1.3
+        ],
+        "counter": [
+          -0.25,
+          0,
+          -0.21
+        ],
+        "exit": [
+          4,
+          0,
+          -6.3
+        ]
+      },
+      "routes": {
+        "visit": [
+          [
+            0,
+            6.8
+          ],
+          [
+            -2,
+            4
+          ],
+          [
+            -0.78,
+            1.13
+          ],
+          [
+            1.5,
+            3
+          ],
+          [
+            3.8,
+            3
+          ],
+          [
+            3.8,
+            1.5
+          ],
+          [
+            3.8,
+            -4.5
+          ],
+          [
+            4,
+            -6.3
+          ]
+        ]
+      }
+    },
+    "design": {
+      "schema_version": "1.0.0",
+      "candidate_id": "MT_EXPLORATION_DESIGN_01",
+      "work_item_id": "MT-SCENE-DESIGN-20261010",
+      "stage": {
+        "candidate_id": "MT_STAGE_R01",
+        "layout_identity": {
+          "path": "art/2026-10-10_architecture-stage-r01/layout.json",
+          "sha256": "352cef8272fa07bc09c73575293859098b6690180005502c0173dcbd491eee94",
+          "size_bytes": 16582,
+          "purpose": "Read-only snapshot; no independent acceptance"
+        },
+        "glb_identity": {
+          "path": "art/2026-10-10_architecture-stage-r01/runtime/stage.glb",
+          "sha256": "e710f6b26805156cf4832a8f47ec4056c3eaebe0da82e17fc1a7cba46245ff1e",
+          "size_bytes": 129712,
+          "purpose": "Read-only snapshot; no independent acceptance"
+        },
+        "transform": {
+          "scale": 1,
+          "translation": [
+            0,
+            0,
+            0
+          ],
+          "up": "+Y",
+          "forward": "+Z"
+        },
+        "bounds": [
+          -7,
+          7,
+          -7,
+          9
+        ],
+        "collider_source": "layout.colliders; height overlap for character; camera:true all tested",
+        "nav_layer": "GROUND",
+        "anchors": {
+          "player_start": [
+            0,
+            0,
+            6.8
+          ],
+          "registration": [
+            -0.78,
+            0,
+            1.13
+          ],
+          "officer": [
+            -0.25,
+            0,
+            -0.7
+          ],
+          "companion": [
+            -1.62,
+            0,
+            1.3
+          ],
+          "counter": [
+            -0.25,
+            0,
+            -0.21
+          ],
+          "exit": [
+            4,
+            0,
+            -6.3
+          ]
+        },
+        "adapter_overrides": {
+          "officer_proxy": [
+            -0.25,
+            0,
+            -1.18
+          ]
+        },
+        "open_issue": "officer anchor [-.25,0,-.70] intersects counter; Art/Engineering reconcile before candidate lock",
+        "desk": {
+          "id": "counter_proxy",
+          "min": [
+            -1.4,
+            0,
+            -0.71
+          ],
+          "max": [
+            0.9,
+            0.98,
+            0.29
+          ],
+          "support_height_m": 0.98,
+          "support_inset_m": 0.28,
+          "approach_root": [
+            -0.25,
+            0,
+            0.75
+          ],
+          "landing_candidate": [
+            -0.25,
+            0.98,
+            -0.21
+          ],
+          "binding": "stage proxy height .98; rebind native desk; old R02 paper1.019 is not authoritative"
+        }
+      },
+      "player": {
+        "radius_m": 0.28,
+        "height_m": 1.84,
+        "walk_speed_mps": 1.55,
+        "diagonal_normalized": true,
+        "max_substep_m": 0.06,
+        "movement": "camera-relative WASD, collision with axis sliding",
+        "npc": "dynamic solid footprints",
+        "stage_bounds": "capsule center clamped, door traversal out of package disabled"
+      },
+      "input": {
+        "bindings": {
+          "WASD": "move",
+          "right_drag": "orbit",
+          "wheel": "distance",
+          "Q": "swap_shoulder",
+          "E": "inspect if eligible",
+          "Enter": "compose",
+          "Escape": "close/skip/release"
+        },
+        "states": [
+          "EXPLORE",
+          "INSPECT",
+          "COMPOSE",
+          "LISTEN",
+          "DIRECTOR",
+          "ACTION",
+          "RETURNING",
+          "SUSPENDED"
+        ],
+        "initial": "EXPLORE",
+        "owners": {
+          "EXPLORE": {
+            "movement": "PLAYER",
+            "camera": "PLAYER",
+            "keyboard": "CANVAS"
+          },
+          "INSPECT": {
+            "movement": "NONE",
+            "camera": "INSPECTION",
+            "keyboard": "PANEL"
+          },
+          "COMPOSE": {
+            "movement": "NONE",
+            "camera": "PLAYER_FROZEN",
+            "keyboard": "TEXTAREA"
+          },
+          "LISTEN": {
+            "movement": "NONE",
+            "camera": "PLAYER_FROZEN",
+            "keyboard": "TRANSCRIPT_PANEL"
+          },
+          "DIRECTOR": {
+            "movement": "NONE",
+            "camera": "DIRECTOR",
+            "keyboard": "SKIP_ONLY"
+          },
+          "ACTION": {
+            "movement": "ACTION_EXECUTOR",
+            "camera": "ACTION_SHOT",
+            "keyboard": "CANCEL_ONLY"
+          },
+          "RETURNING": {
+            "movement": "NONE",
+            "camera": "RETURN_BLEND",
+            "keyboard": "NONE"
+          },
+          "SUSPENDED": {
+            "movement": "NONE",
+            "camera": "LAST_CLEAR",
+            "keyboard": "RESUME_BUTTON"
+          }
+        },
+        "rules": [
+          "One lease, competing acquisition returns OWNER_BUSY",
+          "Clear held keys/drag/pointer capture/velocity on ownership and blur changes",
+          "Retain draft until explicitly erased or submission accepted",
+          "After return require canvas focus and fresh keydown",
+          "Camera transitions never write player_root",
+          "On window/tab return explicit resume; no microphone or movement restart"
+        ],
+        "voice": {
+          "owner": "ENGINEERING",
+          "states": [
+            "UNAVAILABLE",
+            "IDLE",
+            "PERMISSION_PENDING",
+            "LISTENING",
+            "TRANSCRIBING",
+            "EDITABLE",
+            "ERROR"
+          ],
+          "explicit_user_start": true,
+          "preview": "no microphone calls, disabled unavailable indicator",
+          "confirm": "editable transcript and explicit send required",
+          "evidence": "real human audio required"
+        }
+      },
+      "interaction": {
+        "counter": {
+          "enter_radius_m": 1.25,
+          "exit_radius_m": 1.45,
+          "anchor": [
+            -0.25,
+            0,
+            0.75
+          ],
+          "require_line_of_sight": true,
+          "prompt": "E 观察台面",
+          "leave": "remove prompt, no automatic story trigger",
+          "return": "restore eligibility and retained draft",
+          "inspection_world_mutations": []
+        }
+      },
+      "camera": {
+        "mode": "EXPLORE",
+        "fov_deg": 48,
+        "near_m": 0.05,
+        "far_m": 60,
+        "orbit_yaw_rad": 0,
+        "orbit_pitch_rad": 0.08,
+        "distance_m": 2.8,
+        "shoulder_offset_m": 0.48,
+        "pivot_height_m": 1.42,
+        "collision_radius_m": 0.22,
+        "min_distance_preference_m": 0.65,
+        "max_distance_m": 4.2
+      },
+      "action_request": {
+        "owner": "ENGINEERING",
+        "design_only": true,
+        "request": {
+          "request_id": "uuid",
+          "intent_kind": "ACTION|SAY|QUESTION|CONDITIONAL|NEGATION|UNKNOWN",
+          "raw_text": "editable text",
+          "actor_id": "player",
+          "action_id": "jump_to_surface",
+          "target_id": "counter_proxy",
+          "source_world_version": "monotonic integer",
+          "source_input": "typed|voice_confirmed"
+        },
+        "execute_policy": "only explicit affirmative unconditioned action after world/assets validation",
+        "preconditions": [
+          "ground actor, reachable clear approach",
+          "support footprint/height/headroom matches stage",
+          "trajectory and landing occupancy clear",
+          "verified native clips bound",
+          "world version current"
+        ],
+        "phases": [
+          "PROPOSED",
+          "VALIDATED",
+          "APPROACHING",
+          "TAKEOFF",
+          "AIRBORNE",
+          "LANDED",
+          "STABILIZED",
+          "COMPLETED"
+        ],
+        "events": [
+          "action.proposed",
+          "action.validated",
+          "action.phase_changed",
+          "actor.surface_changed",
+          "action.completed",
+          "action.cancelled",
+          "action.failed"
+        ],
+        "event_fields": [
+          "request_id",
+          "sequence",
+          "world_version",
+          "actor_id",
+          "phase",
+          "position",
+          "surface_id",
+          "committed",
+          "reason"
+        ],
+        "world_commit": "TABLETOP only on actual landing, completed only stable standing",
+        "do_not_execute": [
+          {
+            "text": "不要跳上桌子",
+            "kind": "NEGATION"
+          },
+          {
+            "text": "能跳上桌子吗？",
+            "kind": "QUESTION"
+          },
+          {
+            "text": "如果可以就跳上桌子",
+            "kind": "CONDITIONAL"
+          }
+        ],
+        "preview": "local proposal then NOT_IMPLEMENTED, no world/transform mutation"
+      },
+      "dependencies": {
+        "story": {
+          "thread_id": "01a124fe-6141-73e2-807b-c30ca2a093cd",
+          "owns": "canon,motives,dialogue,reactions"
+        },
+        "animation": {
+          "thread_id": "01a124fe-84f1-71c2-bd12-73430eaa5f67",
+          "owns": "native source and walk/jump/landing/stand clips"
+        },
+        "engineering": {
+          "thread_id": "01a123a6-7635-71e0-bd5c-ab82be15d453",
+          "owns": "demo controls, speech, action execution"
+        },
+        "art": {
+          "thread_id": "01a1212f-49dc-7f43-a5a8-311e2350135c",
+          "owns": "native MT_STAGE_R01 architecture"
+        }
+      },
+      "interface_revision": "1.1.0",
+      "narrative_bridge": {
+        "schema_version": "1.0.0",
+        "contract_id": "MT-RECRUITMENT-NARRATIVE-R01",
+        "input_state": "OFFERED_VERIFIED",
+        "acceptance": "ACCEPTED_DESIGN_INTERFACE_ONLY",
+        "consumption": "CONSUMED_DESIGN_CONTRACT_PARTIAL; INTEGRATED_RUNTIME_NOT_OBSERVED",
+        "inputs": [
+          {
+            "path": "design/narrative/2026-10-10_recruitment-motivation/source-check.md",
+            "sha256": "d5e9e6daa16e2f056d9c560683e86fc614e8cacbe6242feb03654c9df02b8770",
+            "size_bytes": 5442,
+            "purpose": "Story R01 offered candidate; compatibility readback only"
+          },
+          {
+            "path": "design/narrative/2026-10-10_recruitment-motivation/facts.json",
+            "sha256": "a43c8b3321a8f2a283262e641fd509bc71bbbdaf36a7868b6064934e990eebf1",
+            "size_bytes": 17770,
+            "purpose": "Story R01 offered candidate; compatibility readback only"
+          },
+          {
+            "path": "design/narrative/2026-10-10_recruitment-motivation/motivation.md",
+            "sha256": "9c4446b3b6466af067eb7d0a8026e14819005bc18cec6d4e0189c6d9b374c49a",
+            "size_bytes": 12250,
+            "purpose": "Story R01 offered candidate; compatibility readback only"
+          },
+          {
+            "path": "design/narrative/2026-10-10_recruitment-motivation/director-constraints.md",
+            "sha256": "d3ad088b4c115e5c0af3fa878dce3894492dd99eb37f6e7e48515d482d80fb86",
+            "size_bytes": 9093,
+            "purpose": "Story R01 offered candidate; compatibility readback only"
+          },
+          {
+            "path": "design/narrative/2026-10-10_recruitment-motivation/validation-cases.json",
+            "sha256": "e6472dd5c8c537c1567c476b041e586e7696f1b4688a1f687023caedd9a61417",
+            "size_bytes": 28234,
+            "purpose": "Story R01 offered candidate; compatibility readback only"
+          }
+        ],
+        "story_owner_thread_id": "01a124fe-6141-73e2-807b-c30ca2a093cd",
+        "read_order": [
+          "source-check.md",
+          "facts.json",
+          "motivation.md",
+          "director-constraints.md",
+          "validation-cases.json"
+        ],
+        "non_overlap": "Reference facts/NOTICE-01/voice profiles externally; no copied or newly authored narrative text, source judgment or dialogue",
+        "slice": {
+          "current_preview": "SPACE_CONTROLS_ONLY; no recruitment transaction",
+          "integration_endpoint": "application_received",
+          "after_endpoint": "submitted/pending; remain physically free to leave/return; no admission, benefit_effective or duty transition in this slice",
+          "later_nodes": "screening_started/completed, admission/rejection notices, benefit_authorization_effective and duty events are separate future features; no rules/criteria currently approved or executed"
+        },
+        "accepted": [
+          {
+            "id": "D-ST-01",
+            "source_refs": [
+              "DIRECTION-01",
+              "NOTICE-01",
+              "ST-30"
+            ],
+            "use": "Information-first affordance: inspect supplied notice content; qualitative limited opportunity and people actively asking/considering; no numeric quota UI",
+            "asset_mapping": "registration counter/notice surface and existing queue/wait zones only; environment applicant dialogue needs real named actor; no automatic crowd acceptance"
+          },
+          {
+            "id": "D-ST-02",
+            "source_refs": [
+              "COMPANION-01",
+              "T-APPLY",
+              "ST-02",
+              "ST-10"
+            ],
+            "use": "Separate player and companion state labels; companion remains independent; no auto-follow/auto-benefit or stance assumed from movement"
+          },
+          {
+            "id": "D-ST-03",
+            "source_refs": [
+              "T-INFO",
+              "T-PAPER",
+              "T-APPLY",
+              "ST-03",
+              "ST-04",
+              "ST-15"
+            ],
+            "use": "UI displays deterministic facts only: inspect/read != sign != received; post-receipt submitted/pending; approved copy referenced from facts.state_interface.ui_copy"
+          },
+          {
+            "id": "D-ST-04",
+            "source_refs": [
+              "T-CONDITIONAL",
+              "ST-05",
+              "ST-06",
+              "ST-07",
+              "ST-08",
+              "ST-09"
+            ],
+            "use": "Input ownership/confirmation preserves negation, condition, hypothesis and future plan; no transaction on ambiguous intent or hidden strategy"
+          },
+          {
+            "id": "D-ST-05",
+            "source_refs": [
+              "T-MOTION",
+              "ST-20",
+              "ST-21",
+              "ST-23",
+              "ST-26"
+            ],
+            "use": "Motion/NPC response adapter uses committed contact and stabilized completion; no successful narration before actual action; moving away/returning does not submit/withdraw application or teleport companion"
+          }
+        ],
+        "state_feedback": {
+          "source": "facts.json state_interface; only adopted display/receipt boundary, not full production schema",
+          "initial_subset": {
+            "application_status": "not_applied",
+            "screening_status": "not_started",
+            "admission_status": "not_decided",
+            "duty_status": "not_started",
+            "player_benefit_effective": false,
+            "companion_application_status": "not_applied",
+            "companion_admission_status": "not_decided",
+            "companion_benefit_effective": false
+          },
+          "valid_application_receipt": {
+            "event": "application_received",
+            "requires": [
+              "explicit affirmative player consent after editable input confirmation",
+              "all player conditions satisfied, current world_version checked",
+              "actual application delivery/receipt completed by deterministic executor",
+              "unique receipt_id, actor_id, source/candidate identity and input request_id; idempotent processing"
+            ],
+            "changes": {
+              "application_status": "submitted",
+              "screening_status": "pending"
+            },
+            "must_remain": {
+              "admission_status": "not_decided",
+              "duty_status": "not_started",
+              "player_benefit_effective": false,
+              "companion_unchanged": true
+            }
+          },
+          "display_binding": [
+            "facts.state_interface.ui_copy.not_applied",
+            "facts.state_interface.ui_copy.submitted",
+            "facts.state_interface.ui_copy.benefit_unverified",
+            "facts.state_interface.ui_copy.companion"
+          ],
+          "not_auto_changed_by": [
+            "look/read",
+            "move/return",
+            "speech started or stopped",
+            "draft written",
+            "signature alone",
+            "body action"
+          ],
+          "post_receipt_control": "release interaction lease through existing RETURNING; keep root, draft and knowledge; no automatic route cut/end scene"
+        },
+        "motion_adapter": {
+          "source": "action request contract + actual execution events",
+          "complete": "action.completed only after STABILIZED => body_action_completed; expose contact/surface state from actual landed event",
+          "failed": "action.failed => body_action_failed with actual phase/position and committed flag",
+          "cancelled": "action.cancelled stays cancellation; carry actual phase/position, do not manufacture completed",
+          "feedback": {
+            "NOT_IMPLEMENTED": "ENGINE_UNSUPPORTED",
+            "NOT_EXECUTED": "semantic/non-action or unconfirmed; not automatically WORLD_DENIED",
+            "WORLD_DENIED": "only if explicit authored region/action permission exists; architecture collision alone does not establish political prohibition",
+            "EXECUTION_FAILED": "execution started but did not achieve requested stable result"
+          },
+          "reaction_eligibility": "successful stood-on-table response only after actual landing/stabilization and NPC observed event; on failure only actual observed facts",
+          "recruitment_mutations": []
+        },
+        "deferred": [
+          {
+            "id": "OPEN-ORIGINAL",
+            "reason": "Primary recruitment passage, exact counts/rank/cohabitation and benefit scope/time not verified; owned by Story/source verification",
+            "disposition": "no precise numbers or guaranteed future benefit in UI"
+          },
+          {
+            "id": "OPEN-PROCEDURE",
+            "reason": "Full screening criteria, admission/rejection, benefit activation, duty and withdrawal rules exceed this spatial-control slice",
+            "disposition": "endpoint explicitly application receipt only; no later node transitions or fixture success as production result"
+          },
+          {
+            "id": "OPEN-REGION-PERMISSION",
+            "reason": "No authored prohibition for tabletop or counter-inner/side-door region in current Design contract",
+            "disposition": "ST-22 world denial pending defined rule; no invented ban, arrest or equipment"
+          },
+          {
+            "id": "OPEN-SCENE-MOTION",
+            "reason": "No native named environment applicant/crowd acting integration",
+            "disposition": "qualitative informational requirement accepted; crowd/temptation experience not proven"
+          },
+          {
+            "id": "OPEN-RUNTIME",
+            "reason": "Current preview has no story transaction executor, notice readership event, narrative state persistence or runtime dialogue",
+            "disposition": "30 story cases NOT_RUN; prior22 control checks do not imply story PASS"
+          }
+        ],
+        "validation": {
+          "all_story_cases": "NOT_RUN",
+          "selected_runtime_targets": [
+            "ST-01",
+            "ST-02",
+            "ST-03",
+            "ST-04",
+            "ST-05",
+            "ST-06",
+            "ST-10",
+            "ST-13",
+            "ST-14",
+            "ST-15",
+            "ST-17",
+            "ST-20",
+            "ST-21",
+            "ST-23",
+            "ST-26",
+            "ST-27",
+            "ST-30"
+          ],
+          "future_nodes_not_enabled": [
+            "ST-16",
+            "ST-18",
+            "ST-19",
+            "ST-22"
+          ],
+          "evidence_ceiling": "Input identity + semantic compatibility and Design interface adoption; no runtime, AI, speech, QA or human acceptance"
+        }
+      }
+    },
+    "animation": {
+      "schema_version": "1.0.0",
+      "asset_id": "MT_PLAYER_ACTION_R01",
+      "candidate_kind": "articulated_rigid_geometry_animation_candidate",
+      "adoption": "NOT_ACCEPTED",
+      "unit": "metre",
+      "runtime_axes": {
+        "up": "+Y",
+        "forward": "-Z",
+        "right": "+X"
+      },
+      "source_axes": {
+        "up": "+Z",
+        "forward": "+Y",
+        "conversion": "runtime=(source.x, source.z, -source.y)"
+      },
+      "height_m": 1.809,
+      "skeleton": {
+        "object": "PlayerRig",
+        "root": "root",
+        "joints": [
+          "root",
+          "pelvis",
+          "spine",
+          "chest",
+          "head",
+          "thigh_L",
+          "shin_L",
+          "foot_L",
+          "upperarm_L",
+          "forearm_L",
+          "hand_L",
+          "thigh_R",
+          "shin_R",
+          "foot_R",
+          "upperarm_R",
+          "forearm_R",
+          "hand_R"
+        ],
+        "skinning": "one bone per rigid mesh segment, no soft tissue deformation",
+        "root_motion": "root bone translation; PlayerRig object identity; do not add director displacement to embedded jump motion"
+      },
+      "sole": {
+        "ankle_above_sole_m": 0.1,
+        "foot_size_m": [
+          0.145,
+          0.1,
+          0.29
+        ],
+        "anchor_nodes": [
+          "foot_L",
+          "foot_R"
+        ],
+        "foot_bone_origin": "ankle; sole reference=ankle-[0,.1,0], shoe center offset local forward+.055",
+        "contact_tolerance_m": 0.005
+      },
+      "table": {
+        "source": "art/2026-10-10_architecture-stage-r01/source/stage.py and layout.json",
+        "world_center_runtime": [
+          -0.25,
+          0,
+          -0.21
+        ],
+        "width_m": 2.42,
+        "depth_m": 1.08,
+        "top_y_m": 1.04,
+        "front_edge_z": 0.33,
+        "status": "STAGE_R01_PARAMETERS; new Design alignment required if changed",
+        "alignment_warning": "Design MT_EXPLORATION_DESIGN_01 support_height_m=0.98 is body collider height; stage top proxy actual=1.04. This clip contacts actual top1.04; block adoption at0.98 until Design/Engineering align."
+      },
+      "clips": [
+        {
+          "name": "walk_in_place",
+          "duration_s": 0.8,
+          "loop": true,
+          "root_motion": false,
+          "speed_mps": 0.76,
+          "step_cycle_s": 0.8,
+          "events": [
+            {
+              "time_s": 0,
+              "type": "foot_plant",
+              "foot": "L"
+            },
+            {
+              "time_s": 0.4,
+              "type": "foot_plant",
+              "foot": "R"
+            }
+          ],
+          "consume": "AnimationMixer LoopRepeat; director owns translation; set timeScale=movement_speed_mps/0.76 (Design speed1.55 => 2.03947). Phase events are metadata, not glTF callbacks."
+        },
+        {
+          "name": "jump_to_table",
+          "duration_s": 3.4,
+          "loop": false,
+          "root_motion": true,
+          "start_runtime": [
+            0,
+            0,
+            0
+          ],
+          "end_runtime": [
+            0,
+            1.04,
+            -1.86
+          ],
+          "approach_distance_m": 0.75,
+          "flight_horizontal_m": 1.11,
+          "events": [
+            {
+              "time_s": 0,
+              "type": "approach_start"
+            },
+            {
+              "time_s": 1.2,
+              "type": "anticipation_start"
+            },
+            {
+              "time_s": 1.65,
+              "type": "takeoff"
+            },
+            {
+              "time_s": 2.6,
+              "type": "both_feet_contact",
+              "surface": "table_top"
+            },
+            {
+              "time_s": 2.78,
+              "type": "landing_absorption"
+            },
+            {
+              "time_s": 3.18,
+              "type": "stable_on_table"
+            }
+          ],
+          "consume": "LoopOnce, clampWhenFinished; base transform at desired start, heading toward target (-Z in asset); bone root supplies trajectory. Pre-position safely with navigation. World-state success only after stable_on_table AND actual scene contact; no callback implies no success."
+        }
+      ],
+      "placement_example": {
+        "start_world_runtime": [
+          -0.25,
+          0,
+          1.65
+        ],
+        "end_world_runtime": [
+          -0.25,
+          1.04,
+          -0.21
+        ],
+        "rotation_y_rad": 0,
+        "requires_clearance": "Full-body swept collision plus head clearance; do not disable all table collision globally",
+        "baked_takeoff_world_runtime": [
+          -0.25,
+          0,
+          0.9
+        ],
+        "design_approach_warning": "Design approach_root z0.75 differs from baked takeoff z0.90. For this full clip navigate to START z1.65 then play embedded approach; no teleport or double navigation."
+      },
+      "transition": {
+        "into_jump": "blend from walk to first approach pose <=.10s with root already aligned; baked approach is included, do not replay external approach simultaneously",
+        "out_of_jump": "clamp final pose; transfer final root displacement into gameplay actor and reset skeletal root to zero only atomically, preserving world transform and platform height",
+        "cancel": "before takeoff may abort safely after grounded pose; airborne requires engine recovery path, never claim landed on cancellation",
+        "retargeting": "fixed proportions; no humanoid-standard retarget or arbitrary-height warp verified"
+      },
+      "evidence_ceiling": "DCC continuous preview + format/import author checks; Three.js integrated behavior, collision arbitration and human quality acceptance separate",
+      "forbidden": "No inference of signing/enrolment, no animation substitute for unsupported action"
+    }
+  },
+  "identities": {
+    "layout": {
+      "sha256": "352cef8272fa07bc09c73575293859098b6690180005502c0173dcbd491eee94",
+      "size_bytes": 16582
+    },
+    "design": {
+      "sha256": "680ed28018a552a4550126ab6494f35a264bfabacb649841f0caf3021c76591d",
+      "size_bytes": 18204
+    },
+    "shots": {
+      "sha256": "d5240b86ad40d3128620850919a196071bff3c6d537581cd4674ea1d32e355c0",
+      "size_bytes": 2474
+    },
+    "animation": {
+      "sha256": "a60e8d28b75418c98811bab89929139f410d4eb693ffa0cf49479204cb2e3d5f",
+      "size_bytes": 5289
+    },
+    "stageDesign": {
+      "sha256": "020897cf8827839a6c50d0c9aed312b9611343f5929d8632ceb2c6bff6c179ba",
+      "size_bytes": 9500
+    },
+    "interaction": {
+      "sha256": "f86e134f6a58cc00572fc5c4953fb576748ac457ed471729937d074192b400a6",
+      "size_bytes": 15539
+    },
+    "uiTokens": {
+      "sha256": "5dbb84bfd118d8e080f5bc9f1cf37ef1ae9f092927c8ce09626c67c9ab0ac228",
+      "size_bytes": 2946
+    },
+    "stageShots": {
+      "sha256": "2b95f1077788259fcf941c916da97d3cb57638a9ae1be40f017d9df6d14dd09b",
+      "size_bytes": 9307
+    },
+    "facts": {
+      "sha256": "a43c8b3321a8f2a283262e641fd509bc71bbbdaf36a7868b6064934e990eebf1",
+      "size_bytes": 17770
+    }
+  },
+  "assets": {
+    "stage": {
+      "url": "./assets/stage.glb",
+      "sha256": "e710f6b26805156cf4832a8f47ec4056c3eaebe0da82e17fc1a7cba46245ff1e",
+      "size_bytes": 129712
+    },
+    "player": {
+      "url": "./assets/player.glb",
+      "sha256": "98744ab864908388c0459e3e6f3968324f139b3a6995809d753f9bd534ec79c3",
+      "size_bytes": 461520
+    },
+    "officer": {
+      "url": "./assets/officer.glb",
+      "sha256": "67ad337222b3018439aead6cb3c2720f86b798742f5080e9c473e44893967020",
+      "size_bytes": 1793788
+    },
+    "paper": {
+      "url": "./assets/paper.glb",
+      "sha256": "f073065bf3280909f04394c1a31fe747d35129325b1cfc1cf5bdf757cc948597",
+      "size_bytes": 326248
+    }
+  }
+}

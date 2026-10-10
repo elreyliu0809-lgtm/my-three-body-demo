@@ -1,1 +1,5 @@
-{"apiBase":"","release":"demo-v0.01","status":"experimental-closed"}
+{
+  "apiBase": "https://differences-miss-cook-blend.trycloudflare.com",
+  "task_id": "MT-MOBILE-LIVE-R04-20261010",
+  "release": "v0.04"
+}

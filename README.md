@@ -1,9 +1,3 @@
-# 实验性Demo v0.02 · 迁徙令
+# My Three Body demo v0.04
 
-Three.js实时场景原型。征募官、柜台和申请单使用R02_STATIC_PILOT_01原生GLB；其他角色仍为程序占位。R02是原创静态技术候选，无蒙皮/动画，尚未通过美术采用或第四季质量验收。
-
-2026-10-10更新。AI保持暂停；可观察人物/物件、编辑自由输入，暂停时不会发送。语音转写入口保留，浏览器支持与真人麦克风另需验证。
-
-网页只含静态前端和原型资产，无后端、模型密钥、邀请码、私人存档、玩家输入或原著全文。旧版v0.01保留为本地历史冻结包。恢复服务须另获授权，旧预算不重置。
-
-第三方许可见vendor/THREE-LICENSE.txt。界面、造型与具体剧情台词均为当前玩法提案，非官方第五季情节。
+Experimental mobile scene with native GLB assets and invite-protected live model planning. No credentials or player records are published.
