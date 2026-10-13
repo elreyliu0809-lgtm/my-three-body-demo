@@ -17,5 +17,12 @@
   "independently_reviewed": false,
   "human_accepted": false,
   "visual_accepted": false,
-  "live_execution_evidence": "AUTHOR_NATIVE_GENERATED_WAIT_AND_RIGHT_HAND_WAVE_COMPLETED"
+  "live_execution_evidence": "AUTHOR_NATIVE_GENERATED_WAIT_AND_RIGHT_HAND_WAVE_COMPLETED",
+  "payload_revision": "MT_GITHUB_CAMERA_FIX_R03_20261013",
+  "camera_heading_source": "POINTER_WORLD_SPACE",
+  "camera_actor_yaw_coupled": false,
+  "model_wire_format": "OPENAI_SAME_CONFIGURED_GATEWAY",
+  "thinking_requested": "DISABLED",
+  "thinking_live_reasoning_tokens": 0,
+  "thinking_evidence_ceiling": "AUTHOR_NATIVE_CALL_AND_GESTURE_COMPLETED"
 }
