@@ -1,0 +1,168 @@
+{
+  "kind": "OFFLINE_AUTHORED_PLANS_NOT_MODEL_UNDERSTANDING",
+  "templates": [
+    {
+      "id": "dance",
+      "label": "离线：走位 → 朝向 → 挥手 → 两轮舞蹈 → 停稳",
+      "raw_text": "我走到左侧空地，朝征募官挥手，跳两轮舞，再停下来。",
+      "steps": [
+        {
+          "primitive_id": "move.to",
+          "target_id": null,
+          "parameters": {
+            "anchor_id": "dance_space",
+            "standoff_m": 0,
+            "speed_mps": 1.2
+          }
+        },
+        {
+          "primitive_id": "face.target",
+          "target_id": "officer",
+          "parameters": {
+            "target_id": "officer",
+            "max_yaw_rate_deg_s": 90
+          }
+        },
+        {
+          "primitive_id": "gesture.perform",
+          "target_id": null,
+          "parameters": {
+            "gesture_id": "wave_right",
+            "target_id": null,
+            "intensity": 1
+          }
+        },
+        {
+          "primitive_id": "dance.perform",
+          "target_id": null,
+          "parameters": {
+            "phrase_id": "dance_loop",
+            "cycles": 2,
+            "tempo_scale": 1,
+            "heading_target_id": null
+          }
+        },
+        {
+          "primitive_id": "body.stop",
+          "target_id": null,
+          "parameters": {}
+        }
+      ]
+    },
+    {
+      "id": "jump",
+      "label": "离线：完整原生跳桌（固定 1.04m）",
+      "raw_text": "走到完整跳跃剪辑的起点，跳上征募桌。",
+      "steps": [
+        {
+          "primitive_id": "move.to",
+          "target_id": null,
+          "parameters": {
+            "anchor_id": "counter_full_clip_start",
+            "standoff_m": 0,
+            "speed_mps": 1.2
+          }
+        },
+        {
+          "primitive_id": "jump.surface",
+          "target_id": "counter_top_proxy",
+          "parameters": {
+            "surface_id": "counter_top_proxy",
+            "clip_id": "jump_to_table",
+            "binding_id": "STAGE_R01_COUNTER104_OFFICER118"
+          }
+        }
+      ]
+    },
+    {
+      "id": "jump_cancel",
+      "label": "离线验证：跳桌起跳后自动取消",
+      "based_on": "jump",
+      "auto_cancel_phase": "native_airborne",
+      "auto_cancel_after_s": 0
+    },
+    {
+      "id": "dance_cancel",
+      "label": "离线验证：舞蹈中取消并等循环边界",
+      "based_on": "dance",
+      "auto_cancel_phase": "dance.perform",
+      "auto_cancel_after_s": 0.7
+    },
+    {
+      "id": "posture",
+      "label": "离线：下蹲 → 起立 → 停稳",
+      "raw_text": "下蹲，然后起立并停稳。",
+      "steps": [
+        {
+          "primitive_id": "body.pose",
+          "target_id": null,
+          "parameters": {
+            "clip_id": "crouch_down"
+          }
+        },
+        {
+          "primitive_id": "body.pose",
+          "target_id": null,
+          "parameters": {
+            "clip_id": "stand_up"
+          }
+        },
+        {
+          "primitive_id": "body.stop",
+          "target_id": null,
+          "parameters": {}
+        }
+      ]
+    },
+    {
+      "id": "wait",
+      "label": "离线：等待 → 停稳",
+      "raw_text": "等两秒，然后停稳。",
+      "steps": [
+        {
+          "primitive_id": "timing.wait",
+          "target_id": null,
+          "parameters": {
+            "seconds": 2
+          }
+        },
+        {
+          "primitive_id": "body.stop",
+          "target_id": null,
+          "parameters": {}
+        }
+      ]
+    },
+    {
+      "id": "leave",
+      "label": "离线：走下柜台并在地面停稳",
+      "raw_text": "从柜台前沿走下去，在地面停稳。",
+      "steps": [
+        {
+          "primitive_id": "surface.leave",
+          "target_id": null,
+          "parameters": {
+            "edge_anchor_id": "counter_front_edge",
+            "speed_mps": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "speech",
+      "label": "离线：呈现玩家明确原话",
+      "raw_text": "我先看看条件。",
+      "steps": [
+        {
+          "primitive_id": "speech.say",
+          "target_id": "officer",
+          "parameters": {
+            "text": "我先看看条件。",
+            "audience_id": "officer",
+            "content_ref": null
+          }
+        }
+      ]
+    }
+  ]
+}

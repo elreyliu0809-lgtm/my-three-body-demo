@@ -1,0 +1,7 @@
+{
+  "delivery_id": "MT_GITHUB_LIVE_PLAYTEST_R02_20261013",
+  "backend_url": "https://dive-suddenly-besides-settings.trycloudflare.com",
+  "expires_at": "2026-10-14T04:09:29.8033485Z",
+  "model": "deepseek-v4-flash",
+  "semantic_policy": "NONE"
+}

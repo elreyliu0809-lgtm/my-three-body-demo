@@ -1,0 +1,21 @@
+{
+  "delivery_id": "MT_GITHUB_LIVE_PLAYTEST_R02_20261013",
+  "runtime_candidate_id": "MT_DEMO_NATIVE_SETTLEMENT_R01_20261012",
+  "source_lock_sha256": "52455DEA8768200C63577FD705431F8ED08D1CE2E084F798B1978DE94FC95422",
+  "base_path": "/my-three-body-demo/playtest-r02/",
+  "model": "deepseek-v4-flash",
+  "allowed_actual_models": [
+    "deepseek-v4-flash",
+    "deepseek-v4-flash-0731"
+  ],
+  "backend": "TEMPORARY_OWNER_PC",
+  "debug_call_limit": 20,
+  "share_call_limit": 100,
+  "automatic_model_retries": 0,
+  "voice_connected": false,
+  "generated_semantics_adopted": false,
+  "independently_reviewed": false,
+  "human_accepted": false,
+  "visual_accepted": false,
+  "live_execution_evidence": "AUTHOR_NATIVE_GENERATED_WAIT_AND_RIGHT_HAND_WAVE_COMPLETED"
+}

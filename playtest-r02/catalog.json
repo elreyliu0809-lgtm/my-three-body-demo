@@ -1,0 +1,510 @@
+{
+  "assets": {
+    "stage": {
+      "sha256": "4F7D0F78E404AF8BF9CD39B37DF73B210342FB90D358A3E5A6E2E0FD6BDC1F16",
+      "size_bytes": 4072192,
+      "url": "/my-three-body-demo/playtest-r02/assets/stage.glb",
+      "materials": [
+        {
+          "name": "Stoneware_R03",
+          "slots": {
+            "map": {
+              "color_space": "srgb"
+            },
+            "roughnessMap": {
+              "color_space": ""
+            },
+            "metalnessMap": {
+              "color_space": ""
+            }
+          }
+        },
+        {
+          "name": "MineralConcrete_R03",
+          "slots": {
+            "map": {
+              "color_space": "srgb"
+            },
+            "normalMap": {
+              "color_space": ""
+            }
+          }
+        },
+        {
+          "name": "glass",
+          "slots": {}
+        },
+        {
+          "name": "GraphiteAnodized_R03",
+          "slots": {}
+        },
+        {
+          "name": "lamp",
+          "slots": {}
+        },
+        {
+          "name": "WindowGlass_R03",
+          "slots": {}
+        },
+        {
+          "name": "QuietTimber_R03",
+          "slots": {}
+        },
+        {
+          "name": "desk",
+          "slots": {}
+        },
+        {
+          "name": "paper",
+          "slots": {}
+        },
+        {
+          "name": "recruitment_graphic",
+          "slots": {
+            "map": {
+              "color_space": "srgb"
+            },
+            "emissiveMap": {
+              "color_space": "srgb"
+            }
+          }
+        },
+        {
+          "name": "notice_graphic",
+          "slots": {
+            "map": {
+              "color_space": "srgb"
+            },
+            "emissiveMap": {
+              "color_space": "srgb"
+            }
+          }
+        },
+        {
+          "name": "transfer_graphic",
+          "slots": {
+            "map": {
+              "color_space": "srgb"
+            },
+            "emissiveMap": {
+              "color_space": "srgb"
+            }
+          }
+        },
+        {
+          "name": "CeilingPlaster_R03",
+          "slots": {}
+        },
+        {
+          "name": "DaylightOutside_R03",
+          "slots": {}
+        },
+        {
+          "name": "InlaidWayfinding_R03",
+          "slots": {}
+        }
+      ],
+      "extensions_required": [
+        "KHR_lights_punctual"
+      ],
+      "clips": [],
+      "source_meshes": 138
+    },
+    "protagonist": {
+      "sha256": "DE7865B5D23F38C95272D56AB874C7E4A4D7F8127848C26146271EE48F74CC63",
+      "size_bytes": 620468,
+      "url": "/my-three-body-demo/playtest-r02/assets/protagonist.glb",
+      "materials": [
+        {
+          "name": "Jacket",
+          "slots": {
+            "map": {
+              "color_space": "srgb"
+            }
+          }
+        },
+        {
+          "name": "Skin",
+          "slots": {}
+        },
+        {
+          "name": "EyeIvory",
+          "slots": {}
+        },
+        {
+          "name": "EyeDark",
+          "slots": {}
+        },
+        {
+          "name": "Hair",
+          "slots": {}
+        },
+        {
+          "name": "Mouth",
+          "slots": {}
+        },
+        {
+          "name": "FaceSubtleStubble",
+          "slots": {
+            "map": {
+              "color_space": "srgb"
+            }
+          }
+        },
+        {
+          "name": "Trouser",
+          "slots": {}
+        },
+        {
+          "name": "Undershirt",
+          "slots": {}
+        },
+        {
+          "name": "Shoe",
+          "slots": {}
+        },
+        {
+          "name": "Sole",
+          "slots": {}
+        }
+      ],
+      "extensions_required": [],
+      "clips": [],
+      "source_meshes": 46
+    },
+    "actions": {
+      "sha256": "05D1CFE858795E41363B107C11509D04A9F78370CDA4AE8A1BD7C00B9A434FE2",
+      "size_bytes": 667048,
+      "url": "/my-three-body-demo/playtest-r02/assets/actions.glb",
+      "materials": [
+        {
+          "name": "joint_cuffs",
+          "slots": {}
+        },
+        {
+          "name": "hair",
+          "slots": {}
+        },
+        {
+          "name": "skin",
+          "slots": {}
+        },
+        {
+          "name": "civilian_coat",
+          "slots": {}
+        },
+        {
+          "name": "trousers",
+          "slots": {}
+        },
+        {
+          "name": "shoe",
+          "slots": {}
+        }
+      ],
+      "extensions_required": [],
+      "clips": [
+        "crouch_down",
+        "dance_loop",
+        "dodge_back",
+        "guard_front",
+        "idle_breathe",
+        "look_left",
+        "look_right",
+        "point_forward",
+        "punch_right",
+        "push_forward",
+        "reach_forward",
+        "recoil_front",
+        "stand_up",
+        "stop_settle",
+        "turn_left_90",
+        "turn_right_90",
+        "walk_in_place",
+        "wave_right"
+      ],
+      "source_meshes": 30
+    },
+    "jump": {
+      "sha256": "98744AB864908388C0459E3E6F3968324F139B3A6995809D753F9BD534EC79C3",
+      "size_bytes": 461520,
+      "url": "/my-three-body-demo/playtest-r02/assets/jump.glb",
+      "materials": [
+        {
+          "name": "joint_cuffs",
+          "slots": {}
+        },
+        {
+          "name": "hair",
+          "slots": {}
+        },
+        {
+          "name": "skin",
+          "slots": {}
+        },
+        {
+          "name": "civilian_coat",
+          "slots": {}
+        },
+        {
+          "name": "trousers",
+          "slots": {}
+        },
+        {
+          "name": "shoe",
+          "slots": {}
+        }
+      ],
+      "extensions_required": [],
+      "clips": [
+        "jump_to_table",
+        "walk_in_place"
+      ],
+      "source_meshes": 30
+    },
+    "officer": {
+      "sha256": "67AD337222B3018439AEAD6CB3C2720F86B798742F5080E9C473E44893967020",
+      "size_bytes": 1793788,
+      "url": "/my-three-body-demo/playtest-r02/assets/officer.glb",
+      "materials": [
+        {
+          "name": "hair_plane_shadow",
+          "slots": {}
+        },
+        {
+          "name": "hair_dark_brown",
+          "slots": {}
+        },
+        {
+          "name": "boot_leather",
+          "slots": {}
+        },
+        {
+          "name": "cloth_seams",
+          "slots": {}
+        },
+        {
+          "name": "cloth_outer_woven_slate",
+          "slots": {
+            "map": {
+              "color_space": "srgb"
+            },
+            "normalMap": {
+              "color_space": ""
+            },
+            "roughnessMap": {
+              "color_space": ""
+            },
+            "metalnessMap": {
+              "color_space": ""
+            }
+          }
+        },
+        {
+          "name": "skin_warm_matte",
+          "slots": {}
+        },
+        {
+          "name": "skin_nail",
+          "slots": {}
+        },
+        {
+          "name": "eye_ivory",
+          "slots": {}
+        },
+        {
+          "name": "cloth_inner_warm_grey",
+          "slots": {}
+        },
+        {
+          "name": "metal_brushed",
+          "slots": {}
+        },
+        {
+          "name": "eye_iris",
+          "slots": {}
+        },
+        {
+          "name": "mouth_subtle",
+          "slots": {}
+        },
+        {
+          "name": "hair_plane_mid",
+          "slots": {}
+        },
+        {
+          "name": "cloth_trouser",
+          "slots": {}
+        }
+      ],
+      "extensions_required": [],
+      "clips": [],
+      "source_meshes": 112
+    },
+    "paper": {
+      "sha256": "F073065BF3280909F04394C1A31FE747D35129325B1CFC1CF5BDF757CC948597",
+      "size_bytes": 326248,
+      "url": "/my-three-body-demo/playtest-r02/assets/paper.glb",
+      "materials": [
+        {
+          "name": "paper_ink",
+          "slots": {}
+        },
+        {
+          "name": "paper_warm",
+          "slots": {}
+        }
+      ],
+      "extensions_required": [],
+      "clips": [],
+      "source_meshes": 15
+    },
+    "npc": {
+      "sha256": "0D52DA79DA20CE1351C7ABD4A1CBE5CF93908262E339C3E3F59E7638D895B51C",
+      "size_bytes": 1134884,
+      "url": "/my-three-body-demo/playtest-r02/assets/npc.glb",
+      "materials": [
+        {
+          "name": "companion_trousers.001",
+          "slots": {}
+        },
+        {
+          "name": "companion_civilian_coat.001",
+          "slots": {}
+        },
+        {
+          "name": "companion_joint_cuffs.001",
+          "slots": {}
+        },
+        {
+          "name": "companion_skin.001",
+          "slots": {}
+        },
+        {
+          "name": "companion_hair.001",
+          "slots": {}
+        },
+        {
+          "name": "companion_shoe.001",
+          "slots": {}
+        },
+        {
+          "name": "officer_trousers",
+          "slots": {}
+        },
+        {
+          "name": "officer_civilian_coat",
+          "slots": {}
+        },
+        {
+          "name": "officer_joint_cuffs",
+          "slots": {}
+        },
+        {
+          "name": "officer_skin",
+          "slots": {}
+        },
+        {
+          "name": "officer_hair",
+          "slots": {}
+        },
+        {
+          "name": "officer_shoe",
+          "slots": {}
+        },
+        {
+          "name": "officer_cap_cloth",
+          "slots": {}
+        },
+        {
+          "name": "officer_blank_trim",
+          "slots": {}
+        }
+      ],
+      "extensions_required": [],
+      "clips": [
+        "crouch_down",
+        "dance_loop",
+        "dodge_back",
+        "guard_front",
+        "idle_breathe",
+        "look_left",
+        "look_right",
+        "point_forward",
+        "punch_right",
+        "push_forward",
+        "reach_forward",
+        "recoil_front",
+        "stand_up",
+        "stop_settle",
+        "turn_left_90",
+        "turn_right_90",
+        "walk_in_place",
+        "wave_right"
+      ],
+      "source_meshes": 66
+    },
+    "officer_style": {
+      "sha256": "6DAC293B738716ED915D0DDF41E08D17077AFD1A76EB57891F9ADBF442EEB973",
+      "size_bytes": 721152,
+      "url": "/my-three-body-demo/playtest-r02/assets/officer_style.glb",
+      "materials": [
+        {
+          "name": "boot_leather",
+          "slots": {}
+        },
+        {
+          "name": "hair_dark_brown",
+          "slots": {}
+        },
+        {
+          "name": "cloth_outer_woven_slate",
+          "slots": {}
+        },
+        {
+          "name": "skin_warm_matte",
+          "slots": {}
+        },
+        {
+          "name": "eye_ivory",
+          "slots": {}
+        },
+        {
+          "name": "hair_plane_shadow",
+          "slots": {}
+        },
+        {
+          "name": "hair_plane_mid",
+          "slots": {}
+        },
+        {
+          "name": "cloth_inner_warm_grey",
+          "slots": {}
+        },
+        {
+          "name": "metal_brushed",
+          "slots": {}
+        },
+        {
+          "name": "cloth_seams",
+          "slots": {}
+        },
+        {
+          "name": "eye_iris",
+          "slots": {}
+        },
+        {
+          "name": "mouth_subtle",
+          "slots": {}
+        },
+        {
+          "name": "cloth_trouser",
+          "slots": {}
+        }
+      ],
+      "extensions_required": [],
+      "clips": [],
+      "source_meshes": 60
+    }
+  }
+}

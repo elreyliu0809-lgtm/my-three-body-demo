@@ -1,0 +1,55 @@
+{
+  "candidate_id": "MT_CHARACTER_STAGE_POLISH_R03",
+  "profiles": {
+    "daylight": {
+      "embedded_light_scale": 0.003,
+      "ambient_intensity": 0.52,
+      "exposure": 1.03
+    }
+  },
+  "hemisphere": {
+    "sky": "#d9e6eb",
+    "ground": "#5b554b"
+  },
+  "directional": [
+    {
+      "id": "window_soft_key",
+      "position": [
+        -5.7,
+        5.0,
+        3.5
+      ],
+      "target": [
+        0,
+        1.0,
+        1.0
+      ],
+      "color": "#fff0da",
+      "intensity": 1.75,
+      "shadow": true,
+      "shadow_map": 2048,
+      "shadow_radius": 3.2
+    },
+    {
+      "id": "ceiling_fill",
+      "position": [
+        3,
+        4,
+        -4
+      ],
+      "target": [
+        0,
+        1,
+        1
+      ],
+      "color": "#d7e8f5",
+      "intensity": 0.45,
+      "shadow": false
+    }
+  ],
+  "color_management": {
+    "runtime": "SRGB output + ACESFilmicToneMapping; atlas inputs SRGB, roughness/normal non-color",
+    "native": "AgX + exposure0; native broad area lamps approximate same key direction, no pixel equivalence claim"
+  },
+  "boundary": "Author daylight recipe. Apply scale once to embedded lights, add declared directionals once. No official rendering parameters, full-device performance or final quality acceptance."
+}

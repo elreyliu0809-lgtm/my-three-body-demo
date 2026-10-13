@@ -1,0 +1,18 @@
+:root {
+  --mt-ink:#111e24; --mt-ink-raised:#20343d; --mt-paper:#edf4f5;
+  --mt-muted:#c2d0d4; --mt-accent:#a8dce9; --mt-rule:rgba(188,216,223,.26);
+  --mt-warning:#e7c38e; --mt-danger:#f1b4a4; --mt-focus:#f5ddb0;
+  --mt-scrim:rgba(13,26,33,.80); --mt-soft:rgba(13,26,33,.48);
+  --mt-surface-top:rgba(43,65,75,.78); --mt-surface-bottom:rgba(11,24,31,.66);
+  --mt-display:'Noto Sans SC','Microsoft YaHei UI','Microsoft YaHei',sans-serif;
+  --mt-body:'Noto Sans SC','Microsoft YaHei UI','Microsoft YaHei','PingFang SC',sans-serif;
+  --mt-utility:'Consolas','SFMono-Regular',monospace;
+  --mt-type-label:14px; --mt-type-body:18px; --mt-type-lead:24px;
+  --mt-type-title:32px; --mt-reading-line:1.7;
+  --mt-space-1:4px; --mt-space-2:8px; --mt-space-3:12px;
+  --mt-space-4:16px; --mt-space-6:24px; --mt-space-8:32px;
+  --mt-space-12:48px; --mt-radius:0px; --mt-control:48px;
+  --mt-fast:120ms; --mt-reveal:180ms; --mt-ease:cubic-bezier(.2,.65,.3,1);
+  --mt-layer-scene:0; --mt-layer-hud:10; --mt-layer-panel:20; --mt-layer-dialog:30;
+}
+@media(prefers-reduced-motion:reduce){:root{--mt-fast:0ms;--mt-reveal:0ms}}

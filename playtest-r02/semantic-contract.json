@@ -1,0 +1,1237 @@
+{
+  "kind": "NONE_RUNTIME_MECHANICAL_PREPARATION",
+  "candidate_id": "MT_DEMO_REAL_MODEL_R01_20261012",
+  "selected_policy": "NONE",
+  "adopted": false,
+  "semantic_classifier": "NOT_SUPPLIED",
+  "semantic_issuer": "UNAVAILABLE",
+  "source_identity": {
+    "manifest_sha256": "A96CAB7D655DEE7864151346B29C8D53CC4C9B2A8BB4E6CB946429EF84A271ED",
+    "contract_sha256": "7A9FA48F78C9BAC6DE891951E4B76DDD575D9803E679E084FF40EADA7D77C150"
+  },
+  "source_identities": [
+    {
+      "source_file": "scope.json",
+      "sha256": "56B685CAEA796852BD632DFE6E94BDBDBB32388F3E94FD3AB28F0625860DA73F",
+      "size_bytes": 18637
+    },
+    {
+      "source_file": "spec.md",
+      "sha256": "0FCE06F063F239307E141AA9BA36AB4AA098BD4778450DEC64898B14C025E68E",
+      "size_bytes": 12466
+    },
+    {
+      "source_file": "semantic-contract.json",
+      "sha256": "7A9FA48F78C9BAC6DE891951E4B76DDD575D9803E679E084FF40EADA7D77C150",
+      "size_bytes": 46649
+    },
+    {
+      "source_file": "validation-cases.json",
+      "sha256": "12B2515F09879BF7F3394C64EE18385EB6F6A1F7AB98B71E3848F37DDD5FFE71",
+      "size_bytes": 27780
+    },
+    {
+      "source_file": "manifest.json",
+      "sha256": "A96CAB7D655DEE7864151346B29C8D53CC4C9B2A8BB4E6CB946429EF84A271ED",
+      "size_bytes": 16804
+    }
+  ],
+  "source_snapshot": {
+    "schema_version": "0.1.0-design",
+    "kind": "HOST_PRIVATE_SEMANTIC_ADMISSION_CANDIDATE",
+    "candidate_id": "MT_GENERATED_STORY_SEMANTICS_R02_20261012",
+    "runtime_implemented": false,
+    "adopted": false,
+    "selected_policy": "NONE",
+    "wire_extension_authorized": false,
+    "model_execution": {
+      "mode": "local_codex",
+      "required_model": null,
+      "actual_model": "Codex model inherited from parent; provider ID NOT_OBSERVED",
+      "request_id": null,
+      "raw_response_file": null,
+      "external_calls": 0
+    },
+    "policy_options": [
+      {
+        "id": "A",
+        "name": "逐样本人工语义证书",
+        "mechanism": "具名内容审核者看完整生成原文、语境与适用R04来源，在新的获准审核任务中签发只覆盖该content_sha256的证书；宿主只绑定真实READ同字节样本。下一次改字/换语境失效。",
+        "interaction": "生成后需要人审核才能推进语义里程碑；玩家动作/对话可先运行。",
+        "ceiling": "适合首个真实canary可审阅样本，不等于实时任意表达的完整AI。",
+        "new_authority_required": "审核者、证书来源/发行接口及具体样本采用，当前未指派。"
+      },
+      {
+        "id": "B",
+        "name": "采用具名语义判定器，歧义时确认",
+        "mechanism": "判定器只提议语义，宿主核来源、完整内容、R04知识与实际READ。玩家意图歧义时用既有clarification请求明确含义/交流范围；如产品选择额外展示解释确认，玩家只确认本人表达意图，不能认证NPC诚实、外界事实或替NPC决定。清楚输入是否自动继续、哪些歧义必须确认，以及判定器误分型容忍均待采用。",
+        "interaction": "原FP已允许上下文intent判断和必要澄清，不要求每句确认。新增显示语义解释/确认属于本候选UX取舍，非既有R04强制。",
+        "ceiling": "保留自由表达和实时NPC潜力；机械守卫不能证明自然语言判定无误，尚无选定实现/校准/真实语义样本QA。",
+        "new_authority_required": "具名判定器版本、信任/校准来源、错误处置、实测验收矩阵、确认交互范围及费用权限（若涉及新调用）。"
+      },
+      {
+        "id": "C",
+        "name": "生成语义仅作提议",
+        "mechanism": "自由生成行动/话语仍按原FP和真实能力执行；具名READ形成本人HEARD_CLAIM。语义里程碑在无采用证书时OPEN，原AUTHORED_LOCAL独立保留，不能替生成路径命中。",
+        "interaction": "不中断自由演出；明确未判定的关系推进，不能显示已解锁L1/L2/O2。",
+        "ceiling": "安全的接缝前置/临时运行边界，未完成原实时自由AI剧情目标。",
+        "new_authority_required": "若作为产品永久能力上限则需舰长接受；当前只说明机械缺依赖时的已有保守处理。"
+      }
+    ],
+    "authority": {
+      "model": "PROPOSED ONLY; may interpret contextual intent and propose claims; no issuer or world authority",
+      "player": "May clarify/confirm own intended expression and requested communication scope only",
+      "semantic_issuer": "Unavailable until exact mechanism, issuer/version, scope and risk are adopted; JSON issuer strings are not capabilities",
+      "channel_issuer": "Existing trusted host presentation channel; actual recipient set and grant, never model/UI flag",
+      "executor": "Same existing executor; strict finite plan and real supported primitives only",
+      "world_committer": "Same sole original EventStore/committer; no new event types/root fields/proof extension",
+      "story_projector": "Derives E01/E02/E03/E04/E08 and L1/L2/O2 from original committed events plus admitted private join; no world writer"
+    },
+    "strict_wire": {
+      "performance_contract_sha256": "92B105027FD9968EAA5EA9ED0061E11BAE4B0DCB12877C87D694F89B19A9F942",
+      "trusted_event_fields": [
+        "candidate_id",
+        "design_contract_id",
+        "scene_binding_id",
+        "scene_fingerprint",
+        "session_id",
+        "request_id",
+        "request_revision",
+        "execution_id",
+        "step_id",
+        "event_id",
+        "event_sequence",
+        "type",
+        "actor_id",
+        "target_id",
+        "source_world_version",
+        "result_world_version",
+        "occurred_at",
+        "source_executor_id",
+        "payload_hash",
+        "actual_transform_revision",
+        "proof",
+        "committed"
+      ],
+      "trusted_event_field_count": 22,
+      "model_plan_unchanged": true,
+      "input_request_unchanged": true,
+      "proof_extension": "NONE",
+      "speech_payload_location": "Existing FP speech.say parameters.text/audience_id; normal plan validation remains required",
+      "proposal_transport": "Dedicated host-private in-memory adapter input or separately authorized private protocol; never extra fields in closed FP model_plan. Exact new runtime route is Coding scope, not supplied authority here."
+    },
+    "private_schemas": {
+      "semantic_proposal": {
+        "type": "object",
+        "properties": {
+          "proposal_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          },
+          "binding": {
+            "type": "object",
+            "properties": {
+              "candidate_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              },
+              "session_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              },
+              "scene_binding_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              },
+              "scene_fingerprint": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              },
+              "scene_instance_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              },
+              "request_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              },
+              "request_revision": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "plan_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              },
+              "plan_sha256": {
+                "type": "string",
+                "pattern": "^[0-9A-Fa-f]{64}$"
+              },
+              "execution_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              },
+              "step_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              },
+              "speaker_actor_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              },
+              "recipient_actor_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 160
+                },
+                "uniqueItems": true,
+                "minItems": 1
+              },
+              "actor_state_revision": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "persona_revision": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              },
+              "source_world_version": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "knowledge_snapshot_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              },
+              "policy_snapshot_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              },
+              "capability_snapshot_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              },
+              "content_sha256": {
+                "type": "string",
+                "pattern": "^[0-9A-Fa-f]{64}$"
+              },
+              "cancel_epoch": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "persona_mapping_ref": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              }
+            },
+            "required": [
+              "candidate_id",
+              "session_id",
+              "scene_binding_id",
+              "scene_fingerprint",
+              "scene_instance_id",
+              "request_id",
+              "request_revision",
+              "plan_id",
+              "plan_sha256",
+              "execution_id",
+              "step_id",
+              "speaker_actor_id",
+              "recipient_actor_ids",
+              "actor_state_revision",
+              "persona_revision",
+              "source_world_version",
+              "knowledge_snapshot_id",
+              "policy_snapshot_id",
+              "capability_snapshot_id",
+              "content_sha256",
+              "cancel_epoch",
+              "persona_mapping_ref"
+            ],
+            "additionalProperties": false
+          },
+          "status": {
+            "const": "PROPOSED"
+          },
+          "original_text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "clauses": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "clause_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 160
+                },
+                "start_codepoint": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "end_codepoint": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "exact_text": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "mode": {
+                  "enum": [
+                    "CURRENT_ASSERTION",
+                    "CURRENT_QUESTION",
+                    "NEGATED",
+                    "QUOTED",
+                    "CONDITIONAL",
+                    "HYPOTHETICAL",
+                    "UNRESOLVED"
+                  ]
+                },
+                "subject_actor_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 160
+                },
+                "topic": {
+                  "enum": [
+                    "LIN_APPLICATION",
+                    "LIN_RELATIONSHIP_BOUNDARY",
+                    "OFFICER_AUTHORITY_LIMITS",
+                    "OTHER",
+                    "UNRESOLVED"
+                  ]
+                },
+                "polarity": {
+                  "enum": [
+                    "AFFIRMATIVE",
+                    "NEGATIVE",
+                    "UNCERTAIN"
+                  ]
+                },
+                "source_refs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 160
+                  },
+                  "uniqueItems": true
+                }
+              },
+              "required": [
+                "clause_id",
+                "start_codepoint",
+                "end_codepoint",
+                "exact_text",
+                "mode",
+                "subject_actor_id",
+                "topic",
+                "polarity",
+                "source_refs"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1
+          },
+          "claims": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "claim_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 160
+                },
+                "clause_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 160
+                  },
+                  "uniqueItems": true
+                },
+                "content": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "epistemic_kind": {
+                  "enum": [
+                    "OWN_EXPERIENCE_REPORT",
+                    "BELIEF",
+                    "HEARD_CLAIM",
+                    "KNOWN_FALSE_TO_SPEAKER"
+                  ]
+                },
+                "source_refs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 160
+                  },
+                  "uniqueItems": true
+                }
+              },
+              "required": [
+                "claim_id",
+                "clause_ids",
+                "content",
+                "epistemic_kind",
+                "source_refs"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "candidate_semantics": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "E01",
+                "E02",
+                "E03",
+                "E04",
+                "E08"
+              ]
+            },
+            "uniqueItems": true
+          },
+          "communicative_scope": {
+            "enum": [
+              "PRIVATE",
+              "PUBLIC",
+              "UNRESOLVED"
+            ]
+          },
+          "basis_observation_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160
+            },
+            "uniqueItems": true
+          },
+          "baseline_source_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160
+            },
+            "uniqueItems": true
+          },
+          "proposer_kind": {
+            "enum": [
+              "MODEL_PROPOSAL",
+              "PLAYER_EXPLICIT_CONFIRMATION",
+              "AUTHOR_CERTIFICATE_CANDIDATE"
+            ]
+          },
+          "world_write_authority": {
+            "const": "NONE"
+          }
+        },
+        "required": [
+          "proposal_id",
+          "binding",
+          "status",
+          "original_text",
+          "clauses",
+          "claims",
+          "candidate_semantics",
+          "communicative_scope",
+          "basis_observation_ids",
+          "baseline_source_refs",
+          "proposer_kind",
+          "world_write_authority"
+        ],
+        "additionalProperties": false
+      },
+      "semantic_certificate": {
+        "type": "object",
+        "properties": {
+          "certificate_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          },
+          "proposal_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          },
+          "binding": {
+            "type": "object",
+            "properties": {
+              "candidate_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              },
+              "session_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              },
+              "scene_binding_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              },
+              "scene_fingerprint": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              },
+              "scene_instance_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              },
+              "request_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              },
+              "request_revision": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "plan_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              },
+              "plan_sha256": {
+                "type": "string",
+                "pattern": "^[0-9A-Fa-f]{64}$"
+              },
+              "execution_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              },
+              "step_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              },
+              "speaker_actor_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              },
+              "recipient_actor_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 160
+                },
+                "uniqueItems": true,
+                "minItems": 1
+              },
+              "actor_state_revision": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "persona_revision": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              },
+              "source_world_version": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "knowledge_snapshot_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              },
+              "policy_snapshot_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              },
+              "capability_snapshot_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              },
+              "content_sha256": {
+                "type": "string",
+                "pattern": "^[0-9A-Fa-f]{64}$"
+              },
+              "cancel_epoch": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "persona_mapping_ref": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160
+              }
+            },
+            "required": [
+              "candidate_id",
+              "session_id",
+              "scene_binding_id",
+              "scene_fingerprint",
+              "scene_instance_id",
+              "request_id",
+              "request_revision",
+              "plan_id",
+              "plan_sha256",
+              "execution_id",
+              "step_id",
+              "speaker_actor_id",
+              "recipient_actor_ids",
+              "actor_state_revision",
+              "persona_revision",
+              "source_world_version",
+              "knowledge_snapshot_id",
+              "policy_snapshot_id",
+              "capability_snapshot_id",
+              "content_sha256",
+              "cancel_epoch",
+              "persona_mapping_ref"
+            ],
+            "additionalProperties": false
+          },
+          "policy_id": {
+            "enum": [
+              "A",
+              "B"
+            ]
+          },
+          "policy_source_sha256": {
+            "type": "string",
+            "pattern": "^[0-9A-Fa-f]{64}$"
+          },
+          "adoption_receipt_ref": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          },
+          "issuer_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          },
+          "issuer_version": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          },
+          "validation_source_ref": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          },
+          "verified_content_sha256": {
+            "type": "string",
+            "pattern": "^[0-9A-Fa-f]{64}$"
+          },
+          "context_sha256": {
+            "type": "string",
+            "pattern": "^[0-9A-Fa-f]{64}$"
+          },
+          "admissible_semantics": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "E01",
+                "E02",
+                "E03",
+                "E04",
+                "E08"
+              ]
+            },
+            "uniqueItems": true
+          },
+          "clause_verdicts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "clause_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 160
+                },
+                "classification": {
+                  "enum": [
+                    "MATCH",
+                    "NO_MATCH",
+                    "AMBIGUOUS",
+                    "CONFLICT"
+                  ]
+                },
+                "reason_code": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 160
+                },
+                "basis_refs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 160
+                  },
+                  "uniqueItems": true
+                }
+              },
+              "required": [
+                "clause_id",
+                "classification",
+                "reason_code",
+                "basis_refs"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "semantic_risk_receipt_ref": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          },
+          "world_write_authority": {
+            "const": "NONE"
+          },
+          "event_time_snapshot_ref": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          }
+        },
+        "required": [
+          "certificate_id",
+          "proposal_id",
+          "binding",
+          "policy_id",
+          "policy_source_sha256",
+          "adoption_receipt_ref",
+          "issuer_id",
+          "issuer_version",
+          "validation_source_ref",
+          "verified_content_sha256",
+          "context_sha256",
+          "admissible_semantics",
+          "clause_verdicts",
+          "semantic_risk_receipt_ref",
+          "world_write_authority",
+          "event_time_snapshot_ref"
+        ],
+        "additionalProperties": false
+      },
+      "actual_read_join": {
+        "type": "object",
+        "properties": {
+          "source_event_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          },
+          "source_event_payload_hash": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          },
+          "observation_receipt_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          },
+          "observer_actor_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          },
+          "channel_proof_ref": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          },
+          "content_sha256": {
+            "type": "string",
+            "pattern": "^[0-9A-Fa-f]{64}$"
+          },
+          "range_start": {
+            "const": 0
+          },
+          "range_end": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "full_range_end": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "delivery": {
+            "const": "ADDRESSED_TEXT_READ"
+          },
+          "committed_event_reader_ref": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          },
+          "full_sequence_reader_ref": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          },
+          "event_time_snapshot_ref": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          },
+          "persona_mapping_ref": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          }
+        },
+        "required": [
+          "source_event_id",
+          "source_event_payload_hash",
+          "observation_receipt_id",
+          "observer_actor_id",
+          "channel_proof_ref",
+          "content_sha256",
+          "range_start",
+          "range_end",
+          "full_range_end",
+          "delivery",
+          "committed_event_reader_ref",
+          "full_sequence_reader_ref",
+          "event_time_snapshot_ref",
+          "persona_mapping_ref"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "mechanical_rules": [
+      {
+        "id": "G01",
+        "require": "Complete source-bound strict request/plan admission before speech; original input preserved, pilot max500 Unicode codepoints without truncation; no new model fields."
+      },
+      {
+        "id": "G02",
+        "require": "Three clocks are distinct: PRE_EXECUTION checks proposal against then-current active request/scene/actor/persona/knowledge/capabilities/cancel epoch. EVENT_TIME freezes original admitted plan, actual execution/event/READ and actual knowledge provenance as of utterance. LATE_INTERPRETATION checks certificate against that immutable event-time snapshot and presently authorized issuer/source capability, not against current request or advanced knowledge revision. No model JSON supplies authority; historical interpretation never authorizes fresh execution."
+      },
+      {
+        "id": "G03",
+        "require": "SHA256 over exact valid Unicode original text encoded UTF8, no trim/normalization. Codepoint half-open spans slice original exactly, end>start and within length. Whole text and context examined; substring cannot hide surrounding negation, quotation, condition, ambiguity or changed subject."
+      },
+      {
+        "id": "G04",
+        "require": "Certificate resolves through privately installed, presently eligible issuer and explicit adopted policy manifest/receipt. It binds exact original event-time source identities, proposal, context, content and event/READ. Current issuer suspension/revocation or missing original exact sources prevents admission. New request/cancel alone does not erase already completed valid speech. Hash/issuer strings, cloned JSON or debug objects cannot mint authority."
+      },
+      {
+        "id": "G05",
+        "require": "PRIVATE has explicit player scope and actual trusted single-recipient lin channel where E01 applies. PUBLIC has actual public grant and actual receivers; false/unavailable PRIVATE proof is UNRESOLVED, never PUBLIC. No geometric/voice privacy inference."
+      },
+      {
+        "id": "G06",
+        "require": "Original committed dialogue_presented event resolved by original trusted reader, 22-field schema/payload hash/identity/full sequence/CAS checked. Full actual READ delivered exact text to each required real bound recipient; range_start0/range_end=full_range_end=codepoint length; matching event, request/step/execution and receipt. DOM counter/target/model claims alone insufficient."
+      },
+      {
+        "id": "G07",
+        "require": "E01/E02/E03/E04/E08 retain exact R04 guards: E02 baseline+full disclosure+player READ independently of E01; L1 requires E01+E02. E03 accepts prior E02 knowledge OR an available legal trusted record; E03+E04 yields L2 independently of L1/E02. Actual prerequisite content and access predate relevant utterance; later certificates may verify earlier content but cannot create missing historical access. No belief/hearsay/selfreport becomes external verified record."
+      },
+      {
+        "id": "G08",
+        "require": "Clauses NO_MATCH/AMBIGUOUS/CONFLICT or incomplete context leave proposed semantics unadmitted. Semantic algorithm cannot be proved correct by structural guards; only selected empirical acceptance policy determines eligibility. Risk selection cannot override provenance/channel/cancel/world guards."
+      },
+      {
+        "id": "G09",
+        "require": "Before/during execution, new request/cancel/leave/unbind/source change invalidates remaining execution under original FP guards. Partial committed content remains partial; unseen ending cannot be certified as delivered. After valid complete original event/READ, later new request/cancel/current knowledge advancement does not retroactively revoke its historical meaning. Late admission cannot schedule old response or touch current execution; current issuer authority/source eligibility still mandatory."
+      },
+      {
+        "id": "G10",
+        "require": "Same causal projector consumes an atomic interpretation overlay, not a new world event or mutated receipt. Overlay commit covers per-actor effective knowledge, NPC fact filtering and Outcome views together at one semantic_projection_revision. Dedup by candidate/scene/original event+READ+meaning; outcome dedup by cause IDs+outcome. Same immutable identity with changed binding/content/meaning is CONFLICT, never last-write-wins."
+      },
+      {
+        "id": "G11",
+        "require": "Already observed semantic:null receipt remains immutable. A complete valid original event may gain a separately keyed verified interpretation overlay after dependency resolution. Actor context, NPC snapshot facts and Outcome must read the same published overlay revision; do not call observe again, duplicate memory or update Outcome alone. Causal dependencies are topologically evaluated by original event-time order, not certificate arrival; unresolved prerequisites are staged OPEN_DEPENDENCY. No original cursor/world version increment, receipt rewrite, speech replay, new request or stale NPC wake. Original exact trusted reader/source unavailable => OPEN_UNAVAILABLE."
+      },
+      {
+        "id": "G12",
+        "require": "Refresh audit/checksum-only restored reader remains UNVERIFIED_AUDIT; no restored serialized certificate/privacy flag revives runtime capability. Keep original UNKNOWN query identity, no model/physical replay. Reactivation requires actual same-source trusted reader not provided here."
+      }
+    ],
+    "event_guards": {
+      "E01": {
+        "speaker": "player",
+        "required_observers": [
+          "lin"
+        ],
+        "scope": "PRIVATE",
+        "meaning": "明确询问林本人征募申请/原因；主题和PRIVATE范围已澄清；不是仅想一想、引语、未来条件或代别人问且语境不明。",
+        "requires": [
+          "Complete actual READ by lin",
+          "Trusted installed certificate for question scope and meaning",
+          "Host sole-recipient channel proof and player explicit communication scope"
+        ],
+        "does_not_prove": [
+          "Lin consent to disclose",
+          "Application result"
+        ]
+      },
+      "E02": {
+        "speaker": "lin",
+        "required_observers": [
+          "player"
+        ],
+        "scope": "PRIVATE or PUBLIC supported by actual channel proof",
+        "meaning": "林完整坦白本人已经提交过一次申请、尚未录取；含语境完整，不是设想/转述/否认/只说已申请的半句。",
+        "requires": [
+          "Adopted R04 lin baseline APPLIED_ONCE_NOT_ADMITTED",
+          "Full actual READ by player",
+          "Trusted certificate and complete meanings consistent with baseline"
+        ],
+        "does_not_prove": [
+          "Verified external application record",
+          "Admission",
+          "Wade factual record",
+          "Consent to follow player"
+        ],
+        "preconditions_excluded": [
+          "E01 not required for E02",
+          "L1 not required for disclosure history"
+        ]
+      },
+      "E03": {
+        "speaker": "player",
+        "required_observers": [
+          "lin"
+        ],
+        "scope": "PUBLIC",
+        "meaning": "玩家确已知E02/合法可信记录，当前将这个申请事实公开说出；断言而非猜测/否定/引语/假设。",
+        "requires": [
+          "Player prior knowledge receipt exists before this speech begins",
+          "Actual PUBLIC channel grant and actual receiver set contains lin",
+          "Full actual READ by lin",
+          "Trusted certificate links all relevant content and known evidence"
+        ],
+        "does_not_prove": [
+          "All crowd knows",
+          "Officer knowledge unless actual receiver",
+          "Application status changed"
+        ],
+        "knowledge_sources": {
+          "mode": "ONE_OF",
+          "allowed": [
+            "Prior complete actual READ of Lin disclosure, later interpretation certificate may confirm that same earlier content",
+            "Prior legal adopted trusted application record with actual player access/read provenance"
+          ],
+          "trusted_record_unavailable": "OPEN_UNAVAILABLE for record source path only; never manufacture E02 or L1",
+          "event_time_rule": "Record/disclosure content was actually available to player before public utterance began; certificate arrival time is not knowledge arrival time"
+        }
+      },
+      "E04": {
+        "speaker": "lin",
+        "required_observers": [
+          "player"
+        ],
+        "scope": "PRIVATE or PUBLIC supported by actual channel proof",
+        "meaning": "林本人完整表达因该公开定性/揭露而被背叛或划清关系；拒绝的是这种关系/定性，不是孤立一句不同意。",
+        "requires": [
+          "Earlier trusted E03 perceived by lin",
+          "Own lin autonomous response, no director rewriting refusal into consent",
+          "Full actual READ by player",
+          "Trusted certificate links causal context"
+        ],
+        "does_not_prove": [
+          "Application withdrawn",
+          "Forced separation or body action",
+          "Player motive truth"
+        ]
+      },
+      "E08": {
+        "speaker": "officer",
+        "required_observers": [
+          "player"
+        ],
+        "scope": "PRIVATE or PUBLIC supported by actual channel proof",
+        "meaning": "官员完整说明本场职责限制及无权个人担保录取/家属免迁；语境中缺一半、条件承诺或越权保证不能算完整边界。",
+        "requires": [
+          "Adopted R04 officer baseline",
+          "Full actual READ by player",
+          "Trusted certificate validates complete authority-limit meaning"
+        ],
+        "does_not_prove": [
+          "Admission or exemption",
+          "Punishment power",
+          "E06 assistance substituted for E08"
+        ]
+      }
+    },
+    "outcome_rules": {
+      "L1": [
+        "E01",
+        "E02"
+      ],
+      "L2": [
+        "E03",
+        "E04"
+      ],
+      "O2": [
+        "E08"
+      ],
+      "empty": "OPEN",
+      "missing_capability": "OPEN_UNAVAILABLE",
+      "not_extended": [
+        "L3",
+        "O1",
+        "O3",
+        "Q1",
+        "Q2",
+        "Q3",
+        "D1",
+        "W1",
+        "W2",
+        "W3",
+        "E05-E07",
+        "E09-E22"
+      ],
+      "L2_requires_L1": false,
+      "L2_requires_E02": false,
+      "E02_requires_E01": false,
+      "history": "Each eligible outcome is appended by original causal event order, not certificate arrival. L1 and L2 have their own guards; L2 may be first LIN milestone. A later legitimate L1 does not erase an earlier L2 or reorder causes."
+    },
+    "return_contract": {
+      "statuses": [
+        "PROPOSED",
+        "ADMITTED_JOIN",
+        "NO_MATCH",
+        "OPEN_UNVERIFIED",
+        "OPEN_UNAVAILABLE",
+        "STALE",
+        "CANCELLED_PARTIAL",
+        "CONFLICT",
+        "UNKNOWN",
+        "OPEN_DEPENDENCY"
+      ],
+      "shape": {
+        "status": "typed status",
+        "proposal_id": "original ID",
+        "candidate_semantics": "admitted only after all guards; otherwise []",
+        "join_refs": "original event/receipt/certificate identities only; no world_patch",
+        "reason_codes": "bounded errors",
+        "world_write_count": 0,
+        "execution_replay_count": 0,
+        "projection_scope": "CURRENT_SCENE_HISTORY or available ARCHIVED_SCENE_HISTORY; no stale response execution"
+      },
+      "private_only": [
+        "certainty classification",
+        "KNOWN_FALSE_TO_SPEAKER",
+        "other actor secrets",
+        "full raw private text/certificate"
+      ],
+      "player_projection": "Only actual known speech/action and existing lawful milestone consequence; no hidden thresholds/source secret/forced motive."
+    },
+    "failure_types": [
+      "SEMANTIC_POLICY_UNSELECTED",
+      "SEMANTIC_ISSUER_UNAVAILABLE",
+      "SEMANTIC_CERTIFICATE_UNTRUSTED",
+      "CONTENT_BINDING_MISMATCH",
+      "SPAN_INVALID",
+      "UNRESOLVED_MEANING",
+      "CLAUSE_NO_MATCH",
+      "BASELINE_OR_KNOWLEDGE_MISSING",
+      "CHANNEL_UNVERIFIED",
+      "PUBLIC_GRANT_MISSING",
+      "PARTIAL_READ",
+      "EVENT_READER_UNTRUSTED",
+      "SEQUENCE_GAP",
+      "SOURCE_DRIFT",
+      "STALE_BINDING",
+      "CANCELLED_PARTIAL",
+      "SEMANTIC_ID_PAYLOAD_CONFLICT",
+      "UNKNOWN_RESTORE_AUTHORITY",
+      "SEMANTIC_DEPENDENCY_PENDING",
+      "PERSONA_MAPPING_UNAVAILABLE",
+      "SEMANTIC_PROJECTION_CONFLICT",
+      "HISTORICAL_READER_UNAVAILABLE"
+    ],
+    "reproposal": {
+      "per_rejection_max": 1,
+      "authority": "Inherited R04 cap, not new model call authorization; every actual retry must fit valid live scope and budget",
+      "forbidden": "Automatic forced disclosure, recursive selfchat, model retry based solely on lowered threshold; mechanical retry with no state change."
+    },
+    "evidence_boundary": "Revised design candidate and exact source inspection only; original rejection retained, same-candidate review not run, runtime not executed.",
+    "schema_note": "Host private design schemas only; persona_revision preserves R04 string identity, actor_state_revision numeric. Neither adopted FP schema extension nor implemented validator.",
+    "temporal_contract": {
+      "PRE_EXECUTION": {
+        "snapshot_owner": "Existing host/unique executor",
+        "compare": "Active request/revision, real current actor/runtime versions, scene, all adopted capability/policy/knowledge sources, cancel epoch",
+        "invalidated_by": [
+          "new request",
+          "cancel",
+          "leave",
+          "unbind",
+          "persona/source drift"
+        ],
+        "effects": "Reject remaining execution; retain actual partial history"
+      },
+      "EVENT_TIME": {
+        "snapshot_owner": "Existing original admission/event/READ authority",
+        "required_evidence": [
+          "original validated plan/source digest",
+          "original event identity and ordered execution prefix",
+          "complete actual READ or actual partial range",
+          "original persona mapping/actor binding",
+          "as-of prerequisite knowledge access",
+          "original execution cancellation qualification"
+        ],
+        "immutability": "Retain exact event-time snapshot, never relabel it with current request/knowledge/cancel epoch"
+      },
+      "LATE_INTERPRETATION": {
+        "compare": "Exact event-time bindings and current authority to inspect/interpret those exact historical sources",
+        "not_compare": [
+          "current request ID equals old request",
+          "current knowledge_snapshot_id equals original",
+          "current cancel epoch equals old proposal epoch"
+        ],
+        "current_failures": [
+          "issuer/policy no longer eligible",
+          "original event reader lost or audit-only",
+          "historical source/mapping unavailable or changed",
+          "certificate exact content/context mismatch"
+        ],
+        "effects": "Only same-scene history overlay; never new execution or automatic old NPC response",
+        "scene_change": "Historical actor slots only if original trusted history reader exists; cannot write new scene/persona knowledge. If archived projection not supported, stage OPEN_UNAVAILABLE without resurrecting actors."
+      }
+    },
+    "persona_mapping": {
+      "R04_identity_type": "Nonempty string such as LIN_R04_1/OFFICER_R04_1",
+      "runtime_existing": "actor-runtime persona_version integer and actor_version integer; current values1 are observations, not content identity",
+      "mapping_record_required": [
+        "actor_id",
+        "scene_instance_id",
+        "R04 persona_revision string",
+        "R04 characters/agent source SHA",
+        "baseline adoption receipt",
+        "runtime persona_version integer",
+        "runtime actor_version integer",
+        "mapping issuer/adoption proof"
+      ],
+      "map_rule": "Trusted host freezes an explicit tuple at scene adoption. One integer is never sufficient; numeric1 cannot be cast to LIN_R04_1 or guessed by actor name. Every tuple maps exactly one adopted content version for that actor/scene; collisions/missing mapping UNAVAILABLE. Event-time snapshot retains original tuple; persona changes require fresh adopted tuple and invalidate pending execution, not rewrite old history.",
+      "wire": "Mapping is host-private, no existing input/model_plan/event field added or coerced",
+      "schema_pair_fields": "binding.persona_revision retains R04 string; binding.actor_state_revision carries event-time actor revision; event-time snapshot resolves exact runtime persona_version using trusted mapping_ref below."
+    },
+    "interpretation_overlay": {
+      "kind": "Derived private semantic index; not world truth store",
+      "key": [
+        "candidate_id",
+        "scene_instance_id",
+        "source_event_id",
+        "observation_receipt_id",
+        "semantic_id"
+      ],
+      "immutable_payload": [
+        "original event/READ/binding/content hashes",
+        "event_time_snapshot_ref",
+        "certificate binding/issuer/policy identity",
+        "persona_mapping_ref",
+        "guard dependencies and actual knowledge access refs"
+      ],
+      "required_join_refs": [
+        "source_event_id",
+        "observation_receipt_id",
+        "event_time_snapshot_ref",
+        "persona_mapping_ref",
+        "certificate_id",
+        "semantic_id",
+        "dependency_join_keys",
+        "knowledge_access_refs"
+      ],
+      "transaction_steps": [
+        "Resolve original event/READ and immutable event-time snapshots using same trusted source reader; no re-execution",
+        "Validate selected policy/current issuer eligibility/exact content and temporal qualifications",
+        "Stage dependent certificates; evaluate original E02/record knowledge -> E03 -> E04 by event-time order; missing join evidence remains OPEN_DEPENDENCY",
+        "Build one projection diff: per-actor effective interpretation refs, NPC own fact view, outcome eligible histories; check current semantic_projection_revision CAS",
+        "Commit one semantic_projection_revision and publish all three views together; failure publishes none, retains staged evidence for review",
+        "Consumer snapshots capture one revision. Effective receipt = original immutable receipt + references to overlay meaning, not replacement of original receipt object; actor memories remain heard-claim, no duplicate observe/new raw memory entry",
+        "Do not automatically wake old-request NPC callbacks. Subsequent legitimate current actor requests may consume their own now-certified historical knowledge under current execution validation"
+      ],
+      "actor_visibility": "Only actual historical receipt recipients receive observed meaning. Speaker may use own performed-speech evidence if original execution source grants that own-action observation; no inferred audience comprehension. Every NPC fact is filtered by that actor own baseline/actual observation or own-action provenance, never entire Outcome fact set.",
+      "dependency_order": "Certificate order irrelevant; actual content/access ordering must satisfy R04. Certificate arriving after E03 may verify prior E02 READ, not create previously missing player access. Trusted-record route requires actual adopted reader/access existing before E03, not a record minted afterwards.",
+      "idempotence": "Identical already-admitted semantic joins no new projection revision/memory/outcome or world event. Same join semantic payload conflict rejects transaction; multiple independently valid corroborating certificates may add audit references without rewriting original meaning or duplicate outcomes.",
+      "world_event_cursor_delta": 0,
+      "world_version_delta": 0,
+      "execution_replay_count": 0,
+      "external_fact_upgrade": false
+    },
+    "trusted_record_path": {
+      "implemented": false,
+      "status": "UNAVAILABLE_UNTIL_ADOPTED_REAL_READER",
+      "required": [
+        "record issuer/source identity and permitted player access",
+        "real record payload referencing Lin application with exact meaning/version",
+        "actual player retrieval/read evidence before E03",
+        "same adopted world/scene baseline identity and no forged record from model/selfreport",
+        "trusted record authority/adoption receipt independent from semantic classifier"
+      ],
+      "never_synthesize": [
+        "E02",
+        "E01",
+        "L1",
+        "application_received",
+        "admission"
+      ],
+      "meaning": "Prior record knowledge satisfies E03 source alternative; it is not Lin confession history."
+    },
+    "engineering_gaps": [
+      {
+        "source": "demo-integrated-r01/src/story/outcome-projector.mjs",
+        "gap": "E02 branch demands facts.E01, narrower than R04 fact",
+        "minimum_change": "Remove E01 prerequisite from E02 admission only; keep baseline/actual full disclosure/READ/certificate checks in shared admission. L1 remains E01+E02."
+      },
+      {
+        "source": "same OutcomeProjector",
+        "gap": "E03 demands playerKnows(E02), no trusted-record alternative; L2 demands current LIN axis L1",
+        "minimum_change": "Expose source-bound prior knowledge predicate E02 or actual trusted-record reference; derive L2 on E03+E04 only. Missing record reader marks alternative UNAVAILABLE, no E02/L1 fabrication."
+      },
+      {
+        "source": "ActorRuntime.observe / ContinuityProjector seen / readModelSnapshot knownReceipts.semantic",
+        "gap": "Actor observations are copies, Outcome seen ignores late interpretation, NPC facts read original receipts.semantic; updating only Outcome or raw receipt is inconsistent",
+        "minimum_change": "Shared host-private overlay resolver+one projection revision transaction joins effective observations/NPC own fact filter/Outcome. Preserve actual immutable records and original event cursor; no observer duplication."
+      },
+      {
+        "source": "ActorRuntime numeric persona_version vs R04 persona_revision string",
+        "gap": "A number alone loses R04 source identity",
+        "minimum_change": "Freeze explicit source-bound actor/scene/content-string/runtime-number mapping tuple, private only; do not change strict FP schema."
+      }
+    ]
+  },
+  "consumption": "Qualified producer-separated technical interface review permits mechanical preparation only; not formal Gate or semantic policy adoption",
+  "runtime_positive_cases": "NOT_RUN",
+  "runtime_permission": "No ADMITTED_JOIN/generated E0x/L1/L2/O2 grant path; private event-time snapshots and typed refusals only"
+}
